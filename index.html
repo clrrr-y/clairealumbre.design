@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Alumbre — Digital Designer</title>
+  <meta name="description" content="Claire Alumbre — freelance graphic designer, photographer, video editor and UI/UX designer." />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260923f" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__right">
+      <ul class="nav__links">
+        <li><a href="#home" class="is-active">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+      </ul>
+      <a href="#contact" class="nav__cta">CONTACT</a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO / LANDING ================= -->
+  <header class="hero" id="home">
+    <div class="hero__pattern-wrap" aria-hidden="true"><div class="hero__pattern-inner"><img src="assets/images/about-bg-pattern.png" alt="" /></div></div>
+    <img class="hero__glow-top" src="assets/images/hero-ellipse-2.png" alt="" aria-hidden="true" />
+    <img class="hero__glow" src="assets/images/hero-glow-v2.png" alt="" aria-hidden="true" />
+
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Hello! I am Claire Alumbre and I am a</p>
+      <img class="hero__wordmark" src="assets/images/digital-designer-wordmark.svg" alt="Digital Designer" />
+      <div class="hero__tags">
+        <div class="hero__tag-group">
+          <span>GRAPHIC DESIGN</span>
+          <span>VIDEO EDIT</span>
+        </div>
+        <div class="hero__tag-group">
+          <span>PHOTOGRAPHY</span>
+          <span>UI/UX DESIGN</span>
+        </div>
+      </div>
+    </div>
+
+    <img class="hero__portrait" src="assets/images/hero-portrait-v2.png" alt="Claire Alumbre" />
+    <span class="hero__fade hero__fade--1" aria-hidden="true"></span>
+    <span class="hero__fade hero__fade--2" aria-hidden="true"></span>
+
+    <div class="hero__bottom">
+      <p class="hero__intro">I create thoughtful digital experiences and visual stories across UI/UX, graphic design, photography, and video.</p>
+      <a href="#projects" class="hero__cta">VIEW MY WORK</a>
+    </div>
+  </header>
+
+  <!-- ================= PROJECTS / CAROUSEL ================= -->
+  <section class="projects" id="projects">
+    <div class="carousel" id="carousel">
+      <button class="carousel__nav carousel__nav--prev" id="carouselPrev" aria-label="Previous category">
+        <img src="assets/images/cf-arrow.svg" alt="" width="40" height="40" />
+      </button>
+
+      <div class="carousel__track" id="carouselTrack">
+        <a class="carousel__card" data-label="Social Media Management" href="#services">
+          <img class="carousel__img" src="assets/images/cf-social-media.png" alt="Social media management preview" style="top:-2.2%;left:-3.82%;width:107.64%;height:105.21%" />
+          <span class="carousel__card-label carousel__card-label--bar">SOCIAL MEDIA<br />MANAGEMENT</span>
+        </a>
+        <a class="carousel__card" data-label="Photography" href="work/photography.html">
+          <img class="carousel__img" src="assets/images/cf-photography.png" alt="Photography preview" style="top:-2.2%;left:-3.83%;width:107.66%;height:105.22%" />
+          <span class="carousel__card-label">PHOTOGRAPHY</span>
+        </a>
+        <a class="carousel__card" data-label="UI/UX Design" href="work/ui-ux.html">
+          <img class="carousel__img" src="assets/images/cf-uiux.png" alt="UI/UX design preview" style="top:-2.2%;left:-3.83%;width:107.66%;height:105.22%" />
+          <span class="carousel__card-label">UI/UX DESIGN</span>
+        </a>
+        <a class="carousel__card carousel__card--flat" data-label="Graphic Designs" href="work/graphic-design.html">
+          <img class="carousel__img" src="assets/images/cf-graphic-designs.png" alt="Graphic design preview" style="top:-22.85%;left:-32.47%;width:168.36%;height:146.51%" />
+          <span class="carousel__card-label">GRAPHIC DESIGNS</span>
+        </a>
+        <a class="carousel__card" data-label="Video Edits" href="work/video-edits.html">
+          <img class="carousel__img" src="assets/images/cf-video-edits.png" alt="Video edits preview" style="top:-2.2%;left:-3.83%;width:107.66%;height:105.22%" />
+          <span class="carousel__card-label">VIDEO EDITS</span>
+        </a>
+      </div>
+
+      <button class="carousel__nav carousel__nav--next" id="carouselNext" aria-label="Next category">
+        <img src="assets/images/cf-arrow.svg" alt="" width="40" height="40" />
+      </button>
+    </div>
+
+    <div class="carousel__pill" id="carouselPill">UI/UX DESIGN</div>
+  </section>
+
+  <div class="page-bg">
+    <div class="page-bg__texture" aria-hidden="true"><img src="assets/images/about-bg-pattern.png" alt="" /></div>
+    <span class="page-bg__fade" aria-hidden="true"></span>
+
+  <!-- ================= WHAT I CAN DO FOR YOU ================= -->
+  <section class="services" id="services">
+    <div class="services__inner">
+      <h2 class="services__title">what i can do for you</h2>
+
+      <div class="service-list">
+
+        <div class="service-row">
+          <button class="service-row__header" type="button" aria-expanded="false">
+            <span class="service-row__text">
+              <span class="service-row__title">UI/UX Design</span>
+              <span class="service-row__desc">User-centered interfaces and prototypes for web and mobile products that are intuitive, functional, and human.</span>
+            </span>
+            <span class="service-row__arrow">→</span>
+          </button>
+          <div class="service-row__panel">
+            <div class="service-row__panel-inner">
+              <ul class="service-row__list">
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Wireframing and interactive prototyping</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Interface design for web and mobile apps</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Usability testing and user feedback analysis</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Design systems and component libraries</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <button class="service-row__header" type="button" aria-expanded="false">
+            <span class="service-row__text">
+              <span class="service-row__title">Graphic Design</span>
+              <span class="service-row__desc">Distinctive brand identities, marketing materials, and print collateral that tell your story and make an impact.</span>
+            </span>
+            <span class="service-row__arrow">→</span>
+          </button>
+          <div class="service-row__panel">
+            <div class="service-row__panel-inner">
+              <ul class="service-row__list">
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Logo design and brand identity systems</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Merchandise and apparel graphics</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Print collateral, posters, and editorial layouts</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Social media publications and campaign assets</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <button class="service-row__header" type="button" aria-expanded="false">
+            <span class="service-row__text">
+              <span class="service-row__title">Photography/Photo Editing</span>
+              <span class="service-row__desc">Compelling product, event, and portrait photography that captures real moments in sharp, considered detail.</span>
+            </span>
+            <span class="service-row__arrow">→</span>
+          </button>
+          <div class="service-row__panel">
+            <div class="service-row__panel-inner">
+              <ul class="service-row__list">
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Product and lifestyle shoots</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Event and on-location coverage</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Portraits and professional headshots</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Color grading and retouching</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <button class="service-row__header" type="button" aria-expanded="false">
+            <span class="service-row__text">
+              <span class="service-row__title">Video Editing</span>
+              <span class="service-row__desc">Short-form edits, motion graphics, and color-graded video that bring stories to life and stop the scroll.</span>
+            </span>
+            <span class="service-row__arrow">→</span>
+          </button>
+          <div class="service-row__panel">
+            <div class="service-row__panel-inner">
+              <ul class="service-row__list">
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Short-form edits for reels and social</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Motion graphics and animated titles</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Color grading and sound mixing</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Promotional and event recap videos</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <button class="service-row__header" type="button" aria-expanded="false">
+            <span class="service-row__text">
+              <span class="service-row__title">Social Media Management</span>
+              <span class="service-row__desc">Content calendars, community engagement, and reporting that keep your brand active, consistent, and on-strategy.</span>
+            </span>
+            <span class="service-row__arrow">→</span>
+          </button>
+          <div class="service-row__panel">
+            <div class="service-row__panel-inner">
+              <ul class="service-row__list">
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Content calendars and campaign planning</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Account management and community engagement</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Caption writing and content strategy</span></li>
+                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Performance tracking and monthly reporting</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="about">
+    <div class="about__grid">
+
+      <div class="about__col about__col--left">
+        <h2 class="about__heading">experience</h2>
+        <div class="timeline about-card">
+          <div class="timeline__item">
+            <p class="about-entry__date">2025 - Present</p>
+            <p class="about-entry__title">Asbir Tech</p>
+            <p class="about-entry__desc">UI/UX Designer</p>
+          </div>
+          <div class="timeline__item">
+            <p class="about-entry__date">2021 - Present</p>
+            <p class="about-entry__title">Papelerya PH</p>
+            <p class="about-entry__desc">Vector Artist | Layout Artist</p>
+          </div>
+          <div class="timeline__item">
+            <p class="about-entry__date">2023 - 2025</p>
+            <p class="about-entry__title">The Weekly Sillimanian</p>
+            <p class="about-entry__desc">Graphic Designer</p>
+            <p class="about-entry__desc">Creative Director</p>
+            <p class="about-entry__desc">Photojournalist</p>
+          </div>
+          <div class="timeline__item">
+            <p class="about-entry__date">2023 - 2025</p>
+            <p class="about-entry__title">Silliman University Camera Club</p>
+            <p class="about-entry__desc">Photographer</p>
+            <p class="about-entry__desc">Videographer</p>
+            <p class="about-entry__desc">Video Team Head</p>
+          </div>
+          <div class="timeline__item">
+            <p class="about-entry__date">2021 - 2023</p>
+            <p class="about-entry__title">Kapunungan sa mga<br />Mass Communicators</p>
+            <p class="about-entry__desc">Documentation Committee Head</p>
+            <p class="about-entry__desc">Documentation Committee Member</p>
+            <p class="about-entry__desc">Creatives Committee Member</p>
+          </div>
+        </div>
+
+        <h2 class="about__heading">education</h2>
+        <div class="entry-card about-card about-card--education">
+          <p class="about-entry__date">2021 - 2025</p>
+          <p class="about-entry__title">Silliman University</p>
+          <p class="about-entry__desc">Bachelor of Mass Communication, Cum Laude</p>
+        </div>
+      </div>
+
+      <div class="about__col about__col--right">
+        <h2 class="about__heading">certifications</h2>
+        <div class="entry-card about-card about-card--certs">
+          <div class="about-entry">
+            <p class="about-entry__date">April 19, 2026</p>
+            <p class="about-entry__title">Udemy</p>
+            <p class="about-entry__desc">Complete Web &amp; Mobile Designer- UI:UX, Figma, +more</p>
+          </div>
+          <div class="about-entry">
+            <p class="about-entry__date">December 30, 2025</p>
+            <p class="about-entry__title">Udemy</p>
+            <p class="about-entry__desc">Learn Figma: UI/UX Design Masterclass From Beginner to Pro</p>
+          </div>
+          <div class="about-entry">
+            <p class="about-entry__date">December 7, 2025</p>
+            <p class="about-entry__title">Domestika</p>
+            <p class="about-entry__desc">Introduction to UX Design</p>
+          </div>
+          <div class="about-entry">
+            <p class="about-entry__date">October 27, 2025</p>
+            <p class="about-entry__title">Uxcel</p>
+            <p class="about-entry__desc">Product Designer</p>
+          </div>
+        </div>
+
+        <h2 class="about__heading">SOFTWARE SKILLS</h2>
+        <div class="skills-card about-card about-card--pill">
+          <div class="skills-row">
+            <img class="skill-icon" src="assets/images/skill-icon-ps.png" alt="Photoshop" />
+            <img class="skill-icon" src="assets/images/skill-icon-pr.png" alt="Premiere Pro" />
+            <img class="skill-icon" src="assets/images/skill-icon-ai.png" alt="Illustrator" />
+            <img class="skill-icon" src="assets/images/skill-icon-lr-bg.png" alt="Lightroom" />
+            <span class="skill-badge" role="img" aria-label="Figma">
+              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
+              <span class="skill-badge__fill"></span>
+              <img class="skill-badge__glyph" src="assets/images/skill-icon-figma-glyph.png" alt="" style="left:13.15px;top:11.69px;width:31.23px;height:36.16px" />
+            </span>
+            <span class="skill-badge" role="img" aria-label="Canva">
+              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
+              <span class="skill-badge__fill"></span>
+              <span class="skill-badge__crop" style="left:9.31px;top:10.05px;width:40.54px;height:38.9px;border-radius:10.96px"><img src="assets/images/skill-icon-canva-glyph.png" alt="" style="left:-21.62%;top:-29.58%;width:144.59%;height:150.7%" /></span>
+            </span>
+            <span class="skill-badge skill-badge--clip" role="img" aria-label="Procreate">
+              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
+              <span class="skill-badge__fill" style="top:4.93px"></span>
+              <span class="skill-badge__crop" style="left:17.53px;top:1.39px;width:24px;height:57.23px"><img src="assets/images/skill-icon-procreate-glyph.png" alt="" style="left:-80.77%;top:-8.06%;width:257.69%;height:108.06%" /></span>
+            </span>
+            <span class="skill-badge" role="img" aria-label="CapCut">
+              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
+              <span class="skill-badge__fill"></span>
+              <span class="skill-badge__crop" style="left:15.89px;top:18.81px;width:27.41px;height:21.35px"><img src="assets/images/skill-icon-capcut-glyph.png" alt="" style="left:-36.54%;top:-61.11%;width:173.08%;height:222.22%" /></span>
+            </span>
+          </div>
+        </div>
+
+        <h2 class="about__heading about__heading--lg">language</h2>
+        <div class="langs-card about-card about-card--pill about-card--langs">
+          <div class="lang"><span class="lang__name">Cebuano</span><span class="lang__level">(Native)</span></div>
+          <div class="lang"><span class="lang__name">English</span><span class="lang__level">(Proficient)</span></div>
+          <div class="lang"><span class="lang__name">Filipino</span><span class="lang__level">(Proficient)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  </div>
+
+  <!-- ================= GET IN TOUCH ================= -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <h2 class="contact__title">GET IN TOUCH</h2>
+      <p class="contact__text">Have a project in mind or just want to say hi? I'm always open to new collaborations, freelance work, and a good creative conversation.</p>
+      <a class="contact__email" href="mailto:clairealumbre@gmail.com">clairealumbre@gmail.com</a>
+      <div class="contact__socials">
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script src="assets/js/main.js?v=20260923f"></script>
+</body>
+</html>

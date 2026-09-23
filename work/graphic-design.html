@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Designs — Claire Alumbre</title>
+  <meta name="description" content="Claire Alumbre — graphic design portfolio: social media publications, merch designs, logo designs and more." />
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260923f" />
+  <style>
+    /* Page-specific: small caption under the footer QR code ("Graphic
+       Designs"), since the shared .work-footer only defines img + h3. */
+    .work-footer__qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .work-footer__qr-caption {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html#projects">&larr; Back to portfolio</a>
+
+  <nav class="nav" id="nav">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__right">
+      <ul class="nav__links">
+        <li><a href="../index.html#home" class="is-active">HOME</a></li>
+        <li><a href="../index.html#about">ABOUT</a></li>
+        <li><a href="../index.html#projects">PROJECTS</a></li>
+      </ul>
+      <a href="../index.html#contact" class="nav__cta">CONTACT</a>
+    </div>
+  </nav>
+
+  <header class="work-header">
+    <p class="work-header__eyebrow">MY WORK</p>
+    <h1>Graphic Designs</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="section-intro">
+        <p class="section-intro__desc">Four collections spanning social campaigns, merch, logos, and print pieces. Scroll through, or click straight into one.</p>
+      </div>
+    </div>
+
+    <div class="stack">
+      <a class="stack-card" href="graphic-design/social-media.html" style="background-image:url('../assets/images/work/graphic-design/social-18-the-crown-awaits-pageant-poster.jpg')">
+        <span class="stack-card__scrim"></span>
+        <span class="stack-card__content">
+          <span class="pill">GRAPHIC DESIGN</span>
+          <h3>Social Media Publications</h3>
+          <p>Event posters, campaign graphics, and social cards for Asbir Tech, The Weekly Sillimanian, and campus organizations.</p>
+        </span>
+      </a>
+      <a class="stack-card" href="graphic-design/merch.html" style="background-image:url('../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg')">
+        <span class="stack-card__scrim"></span>
+        <span class="stack-card__content">
+          <span class="pill">GRAPHIC DESIGN</span>
+          <h3>Merch Designs</h3>
+          <p>Jersey, lanyard, and t-shirt mockups translating brand identities onto physical merchandise.</p>
+        </span>
+      </a>
+      <a class="stack-card" href="graphic-design/logos.html" style="background-image:url('../assets/images/work/graphic-design/logo-02-motobizz.png')">
+        <span class="stack-card__scrim"></span>
+        <span class="stack-card__content">
+          <span class="pill">GRAPHIC DESIGN</span>
+          <h3>Logo Designs</h3>
+          <p>Logo marks and brand icons for small businesses, campus products, and passion projects.</p>
+        </span>
+      </a>
+      <a class="stack-card" href="graphic-design/others.html" style="background-image:url('../assets/images/work/graphic-design/others1-06-dapig-brochure-mockup.jpg')">
+        <span class="stack-card__scrim"></span>
+        <span class="stack-card__content">
+          <span class="pill">GRAPHIC DESIGN</span>
+          <h3>Others</h3>
+          <p>News layouts, event tickets, bingo cards, and brochures rounding out the catalog.</p>
+        </span>
+      </a>
+    </div>
+
+    <a class="work-footer" href="#">
+      <div class="work-footer__qr-wrap">
+        <img src="../assets/images/work/graphic-design/qr-code-composited.jpg" alt="QR code" />
+        <span class="work-footer__qr-caption">Graphic Designs</span>
+      </div>
+      <h3>Scan to<br>view more</h3>
+    </a>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script src="../assets/js/main.js?v=20260923f"></script>
+</body>
+</html>
