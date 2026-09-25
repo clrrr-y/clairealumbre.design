@@ -1,7 +1,7 @@
 /* Featured Projects — card layout from Figma 667:1814, exact outer silhouette from 669:3232. */
 
 .projects .project-stack {
-  --stack-top: 96px;
+  --stack-top: 120px;
   --stack-step: clamp(66px, 9.375vw, 112px);
   position: relative;
   z-index: 3;
@@ -18,18 +18,20 @@
 .projects .project-folder:nth-child(1),
 .projects .project-folder:nth-child(2),
 .projects .project-folder:nth-child(3),
-.projects .project-folder:nth-child(4) {
+.projects .project-folder:nth-child(4),
+.projects .project-folder:nth-child(5) {
   --folder-color: #26272b;
   position: sticky;
   top: var(--stack-top);
   z-index: 1;
   display: block;
   width: 100%;
-  max-width: 1200px;
+  max-width: 960px;
+  justify-self: center;
   aspect-ratio: 704 / 504;
   min-height: 0;
   height: auto;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -67,10 +69,23 @@
   z-index: 4;
 }
 
+.projects .project-folder:nth-child(5) {
+  top: calc(var(--stack-top) + var(--stack-step) + var(--stack-step) + var(--stack-step) + var(--stack-step));
+  z-index: 5;
+}
+
 .projects .project-folder--plaza { --folder-color: #7c698e; }
 .projects .project-folder--talenta { --folder-color: #b41e22; }
 .projects .project-folder--concert { --folder-color: #174d57; }
 .projects .project-folder--documentary { --folder-color: #25282d; }
+.projects .project-folder--vectors { --folder-color: #716a79; }
+
+.projects .projects__intro {
+  position: relative;
+  z-index: 6;
+  width: min(1200px, 100%);
+  margin-bottom: 40px;
+}
 
 .projects .project-folder::before {
   display: none;
@@ -349,15 +364,16 @@
 
 .projects .category-folder__text > strong {
   display: block;
+  width: 100%;
   max-width: 100%;
   margin: 0;
   color: #fff;
   font-family: var(--font-display);
   font-size: 10.2273cqw;
   font-weight: 400;
-  line-height: .72;
+  line-height: .92;
   letter-spacing: 0;
-  text-wrap: balance;
+  white-space: nowrap;
   text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
 }
 
@@ -413,7 +429,7 @@
 
 @media (min-width: 781px) and (max-width: 1024px) {
   .projects .project-stack {
-    --stack-top: 78px;
+    --stack-top: 104px;
     --stack-step: 56px;
     padding-bottom: 140px;
   }
@@ -422,14 +438,21 @@
 @media (max-width: 780px) {
   .projects .project-stack {
     gap: 36px;
+    width: 100%;
     padding-bottom: 0;
+  }
+
+  .projects .projects__intro {
+    width: 100%;
+    margin-bottom: 32px;
   }
 
   .projects .project-folder,
   .projects .project-folder:nth-child(1),
   .projects .project-folder:nth-child(2),
   .projects .project-folder:nth-child(3),
-  .projects .project-folder:nth-child(4) {
+  .projects .project-folder:nth-child(4),
+  .projects .project-folder:nth-child(5) {
     position: relative;
     top: auto;
     aspect-ratio: 704 / 504;
@@ -479,7 +502,8 @@
   .projects .project-folder:nth-child(1),
   .projects .project-folder:nth-child(2),
   .projects .project-folder:nth-child(3),
-  .projects .project-folder:nth-child(4) {
+  .projects .project-folder:nth-child(4),
+  .projects .project-folder:nth-child(5) {
     position: relative;
     top: auto;
   }
