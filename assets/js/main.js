@@ -242,6 +242,42 @@ if (hasGSAP && window.ScrollTrigger) {
 })();
 
 // ---------------------------------------------------------------------------
+// About section: continuous background orbit
+// ---------------------------------------------------------------------------
+(function () {
+  const orbit = document.querySelector('#about .about-orbit__images');
+  if (!orbit) return;
+
+  const thumbnails = Array.from(orbit.querySelectorAll('img'));
+  const thumbnailTilts = [-14, -9, -4, 8, 14, 12, 7, -5, -10, -16, -12, 10];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches) return;
+
+  const baseAngles = thumbnails.map((_, index) => (Math.PI * 2 * index) / thumbnails.length);
+  const start = performance.now();
+  const duration = 52000;
+
+  function animate(now) {
+    if (reducedMotion.matches) return;
+    const rotation = ((now - start) / duration) * Math.PI * 2;
+    thumbnails.forEach((thumbnail, index) => {
+      const angle = baseAngles[index] + rotation;
+      // Keep the orbit outside the central copy column: wide horizontally,
+      // with enough vertical separation to clear the headline and button.
+      const x = 50 + Math.cos(angle) * 47;
+      const y = 50 + Math.sin(angle) * 47;
+      const tilt = thumbnailTilts[index] || 0;
+      thumbnail.style.left = `${x.toFixed(2)}%`;
+      thumbnail.style.top = `${y.toFixed(2)}%`;
+      thumbnail.style.transform = `translate(-50%, -50%) rotate(${tilt}deg)`;
+    });
+    window.requestAnimationFrame(animate);
+  }
+
+  window.requestAnimationFrame(animate);
+})();
+
+// ---------------------------------------------------------------------------
 // "What I can do for you" accordion: click the header/chevron to expand/collapse
 // ---------------------------------------------------------------------------
 (function () {
@@ -349,4 +385,89 @@ if (hasGSAP && window.ScrollTrigger) {
       }
     );
   });
+})();
+
+// ---------------------------------------------------------------------------
+// About page: Cohesion-style tech stack cards
+// ---------------------------------------------------------------------------
+(function () {
+  const tools = Array.from(document.querySelectorAll('.about-page__tool'));
+  const techStack = document.querySelector('.about-page__tech-stack-frame');
+  const tooltip = document.getElementById('techStackFlipTooltip');
+  if (!tools.length) return;
+
+  if (techStack && tooltip) {
+    const moveTooltip = (event) => {
+      if (event.pointerType === 'touch') return;
+      const bounds = techStack.getBoundingClientRect();
+      const x = Math.min(Math.max(event.clientX - bounds.left, 8), bounds.width - tooltip.offsetWidth - 8);
+      const y = Math.min(Math.max(event.clientY - bounds.top, 8), bounds.height - tooltip.offsetHeight - 8);
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y}px`;
+    };
+
+    const hideTooltip = () => {
+      tooltip.classList.remove('is-visible');
+      tooltip.setAttribute('aria-hidden', 'true');
+    };
+
+    tools.forEach((tool) => {
+      tool.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'touch') {
+          moveTooltip(event);
+          tooltip.classList.add('is-visible');
+          tooltip.setAttribute('aria-hidden', 'false');
+        }
+      });
+      tool.addEventListener('pointermove', (event) => {
+        if (event.pointerType === 'touch') return;
+        moveTooltip(event);
+        tooltip.classList.add('is-visible');
+        tooltip.setAttribute('aria-hidden', 'false');
+      });
+      tool.addEventListener('pointerleave', hideTooltip);
+    });
+  }
+
+  tools.forEach((tool) => {
+    const front = tool.querySelector('.about-page__tool-face--front');
+    const back = tool.querySelector('.about-page__tool-face--back');
+
+    tool.addEventListener('click', () => {
+      const flipped = tool.classList.toggle('is-flipped');
+      tool.setAttribute('aria-pressed', String(flipped));
+      if (front) front.setAttribute('aria-hidden', String(flipped));
+      if (back) back.setAttribute('aria-hidden', String(!flipped));
+    });
+  });
+})();
+
+// ---------------------------------------------------------------------------
+// Featured Projects: restrained scroll reveal for the Figma folder cards
+// ---------------------------------------------------------------------------
+(function () {
+  const stack = document.querySelector('.project-stack');
+  const cards = Array.from(document.querySelectorAll('[data-project-card]'));
+  if (!stack || !cards.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    cards.forEach((card) => card.classList.add('is-visible'));
+    return;
+  }
+
+  stack.classList.add('is-reveal-ready');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -8% 0px',
+  });
+
+  cards.forEach((card) => observer.observe(card));
 })();
