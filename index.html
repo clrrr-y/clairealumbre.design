@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claire Alumbre — Digital Designer</title>
   <meta name="description" content="Claire Alumbre — freelance graphic designer, photographer, video editor and UI/UX designer." />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260923f" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260925landing17" />
+  <link rel="stylesheet" href="assets/css/featured-projects.css?v=20260926category1" />
 </head>
 <body>
 
@@ -17,6 +18,7 @@
       <ul class="nav__links">
         <li><a href="#home" class="is-active">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
         <li><a href="#projects">PROJECTS</a></li>
       </ul>
       <a href="#contact" class="nav__cta">CONTACT</a>
@@ -50,46 +52,101 @@
 
     <div class="hero__bottom">
       <p class="hero__intro">I create thoughtful digital experiences and visual stories across UI/UX, graphic design, photography, and video.</p>
-      <a href="#projects" class="hero__cta">VIEW MY WORK</a>
     </div>
   </header>
 
-  <!-- ================= PROJECTS / CAROUSEL ================= -->
+  <!-- ================= FEATURED PROJECTS ================= -->
   <section class="projects" id="projects">
-    <div class="carousel" id="carousel">
-      <button class="carousel__nav carousel__nav--prev" id="carouselPrev" aria-label="Previous category">
-        <img src="assets/images/cf-arrow.svg" alt="" width="40" height="40" />
-      </button>
-
-      <div class="carousel__track" id="carouselTrack">
-        <a class="carousel__card" data-label="Social Media Management" href="#services">
-          <img class="carousel__img" src="assets/images/cf-social-media.png" alt="Social media management preview" style="top:-2.2%;left:-3.82%;width:107.64%;height:105.21%" />
-          <span class="carousel__card-label carousel__card-label--bar">SOCIAL MEDIA<br />MANAGEMENT</span>
-        </a>
-        <a class="carousel__card" data-label="Photography" href="work/photography.html">
-          <img class="carousel__img" src="assets/images/cf-photography.png" alt="Photography preview" style="top:-2.2%;left:-3.83%;width:107.66%;height:105.22%" />
-          <span class="carousel__card-label">PHOTOGRAPHY</span>
-        </a>
-        <a class="carousel__card" data-label="UI/UX Design" href="work/ui-ux.html">
-          <img class="carousel__img" src="assets/images/cf-uiux.png" alt="UI/UX design preview" style="top:-2.2%;left:-3.83%;width:107.66%;height:105.22%" />
-          <span class="carousel__card-label">UI/UX DESIGN</span>
-        </a>
-        <a class="carousel__card carousel__card--flat" data-label="Graphic Designs" href="work/graphic-design.html">
-          <img class="carousel__img" src="assets/images/cf-graphic-designs.png" alt="Graphic design preview" style="top:-22.85%;left:-32.47%;width:168.36%;height:146.51%" />
-          <span class="carousel__card-label">GRAPHIC DESIGNS</span>
-        </a>
-        <a class="carousel__card" data-label="Video Edits" href="work/video-edits.html">
-          <img class="carousel__img" src="assets/images/cf-video-edits.png" alt="Video edits preview" style="top:-2.2%;left:-3.83%;width:107.66%;height:105.22%" />
-          <span class="carousel__card-label">VIDEO EDITS</span>
-        </a>
-      </div>
-
-      <button class="carousel__nav carousel__nav--next" id="carouselNext" aria-label="Next category">
-        <img src="assets/images/cf-arrow.svg" alt="" width="40" height="40" />
-      </button>
+    <div class="projects__intro">
+      <h2 class="projects__title">FEATURED PROJECTS</h2>
+      <p>Selected work across digital design, visual storytelling, and content.</p>
     </div>
 
-    <div class="carousel__pill" id="carouselPill">UI/UX DESIGN</div>
+    <div class="project-stack">
+      <a class="project-folder project-folder--plaza" href="work/ui-ux.html" data-project-card>
+        <svg class="category-folder__media" viewBox="0 0 704 504" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="category-folder-clip-uiux"><path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" /></clipPath>
+            <filter id="category-folder-blur-uiux" x="-24" y="-24" width="752" height="552" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="3.5" /></filter>
+          </defs>
+          <g clip-path="url(#category-folder-clip-uiux)">
+            <image href="assets/images/work/ui-ux/event-management-web-app.png" x="-8" y="-8" width="720" height="520" preserveAspectRatio="xMidYMid slice" filter="url(#category-folder-blur-uiux)" />
+            <rect width="704" height="504" fill="#000" fill-opacity=".8" />
+          </g>
+          <path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" fill="none" stroke="#fff" stroke-opacity=".16" />
+        </svg>
+        <span class="category-folder__content">
+          <span class="category-folder__text">
+            <strong>UI/UX DESIGN</strong>
+            <span>Intuitive interfaces and prototypes that turn complex user journeys into clear digital experiences.</span>
+          </span>
+          <span class="category-folder__cta"><span>VIEW PROJECTS</span><img src="assets/images/category-folder-arrow.svg" alt="" aria-hidden="true" /></span>
+        </span>
+      </a>
+
+      <a class="project-folder project-folder--talenta" href="work/graphic-design.html" data-project-card>
+        <svg class="category-folder__media" viewBox="0 0 704 504" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="category-folder-clip-graphic"><path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" /></clipPath>
+            <filter id="category-folder-blur-graphic" x="-24" y="-24" width="752" height="552" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="3.5" /></filter>
+          </defs>
+          <g clip-path="url(#category-folder-clip-graphic)">
+            <image href="2.jpg" x="-8" y="-8" width="720" height="520" preserveAspectRatio="xMidYMid slice" filter="url(#category-folder-blur-graphic)" />
+            <rect width="704" height="504" fill="#000" fill-opacity=".8" />
+          </g>
+          <path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" fill="none" stroke="#fff" stroke-opacity=".16" />
+        </svg>
+        <span class="category-folder__content">
+          <span class="category-folder__text">
+            <strong>GRAPHIC DESIGNS</strong>
+            <span>Brand visuals, campaign materials, and social graphics designed to communicate with clarity and impact.</span>
+          </span>
+          <span class="category-folder__cta"><span>VIEW PROJECTS</span><img src="assets/images/category-folder-arrow.svg" alt="" aria-hidden="true" /></span>
+        </span>
+      </a>
+
+      <a class="project-folder project-folder--concert" href="work/photography.html" data-project-card>
+        <svg class="category-folder__media" viewBox="0 0 704 504" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="category-folder-clip-photo"><path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" /></clipPath>
+            <filter id="category-folder-blur-photo" x="-24" y="-24" width="752" height="552" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="3.5" /></filter>
+          </defs>
+          <g clip-path="url(#category-folder-clip-photo)">
+            <image href="assets/images/work/photography/event-singer-floral-shirt.jpg" x="-8" y="-8" width="720" height="520" preserveAspectRatio="xMidYMid slice" filter="url(#category-folder-blur-photo)" />
+            <rect width="704" height="504" fill="#000" fill-opacity=".8" />
+          </g>
+          <path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" fill="none" stroke="#fff" stroke-opacity=".16" />
+        </svg>
+        <span class="category-folder__content">
+          <span class="category-folder__text">
+            <strong>PHOTOGRAPHY</strong>
+            <span>Event and portrait photography that captures atmosphere, expression, and meaningful moments.</span>
+          </span>
+          <span class="category-folder__cta"><span>VIEW PROJECTS</span><img src="assets/images/category-folder-arrow.svg" alt="" aria-hidden="true" /></span>
+        </span>
+      </a>
+
+      <a class="project-folder project-folder--documentary" href="work/video-edits.html" data-project-card>
+        <svg class="category-folder__media" viewBox="0 0 704 504" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="category-folder-clip-video"><path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" /></clipPath>
+            <filter id="category-folder-blur-video" x="-24" y="-24" width="752" height="552" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="3.5" /></filter>
+          </defs>
+          <g clip-path="url(#category-folder-clip-video)">
+            <image href="assets/images/work/video-edits/thumb-its-a-case.png" x="-8" y="-8" width="720" height="520" preserveAspectRatio="xMidYMid slice" filter="url(#category-folder-blur-video)" />
+            <rect width="704" height="504" fill="#000" fill-opacity=".8" />
+          </g>
+          <path d="M0 20.6341C0 9.23822 9.23822 0 20.6341 0H312.153C319.219 0 325.793 3.61512 329.578 9.5815L347.922 38.5013C351.707 44.4676 358.281 48.0828 365.347 48.0828H683.366C694.762 48.0828 704 57.321 704 68.7169V483.366C704 494.762 694.762 504 683.366 504H20.6341C9.23823 504 0 494.762 0 483.366V20.6341Z" fill="none" stroke="#fff" stroke-opacity=".16" />
+        </svg>
+        <span class="category-folder__content">
+          <span class="category-folder__text">
+            <strong>VIDEO EDITING</strong>
+            <span>Story-driven edits shaped through purposeful pacing, sound, and visuals for engaging digital content.</span>
+          </span>
+          <span class="category-folder__cta"><span>VIEW PROJECTS</span><img src="assets/images/category-folder-arrow.svg" alt="" aria-hidden="true" /></span>
+        </span>
+      </a>
+    </div>
   </section>
 
   <div class="page-bg">
@@ -99,225 +156,39 @@
   <!-- ================= WHAT I CAN DO FOR YOU ================= -->
   <section class="services" id="services">
     <div class="services__inner">
-      <h2 class="services__title">what i can do for you</h2>
-
+      <h2 class="services__title">WHAT I CAN DO FOR YOU</h2>
       <div class="service-list">
-
-        <div class="service-row">
-          <button class="service-row__header" type="button" aria-expanded="false">
-            <span class="service-row__text">
-              <span class="service-row__title">UI/UX Design</span>
-              <span class="service-row__desc">User-centered interfaces and prototypes for web and mobile products that are intuitive, functional, and human.</span>
-            </span>
-            <span class="service-row__arrow">→</span>
-          </button>
-          <div class="service-row__panel">
-            <div class="service-row__panel-inner">
-              <ul class="service-row__list">
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Wireframing and interactive prototyping</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Interface design for web and mobile apps</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Usability testing and user feedback analysis</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Design systems and component libraries</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-row">
-          <button class="service-row__header" type="button" aria-expanded="false">
-            <span class="service-row__text">
-              <span class="service-row__title">Graphic Design</span>
-              <span class="service-row__desc">Distinctive brand identities, marketing materials, and print collateral that tell your story and make an impact.</span>
-            </span>
-            <span class="service-row__arrow">→</span>
-          </button>
-          <div class="service-row__panel">
-            <div class="service-row__panel-inner">
-              <ul class="service-row__list">
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Logo design and brand identity systems</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Merchandise and apparel graphics</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Print collateral, posters, and editorial layouts</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Social media publications and campaign assets</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-row">
-          <button class="service-row__header" type="button" aria-expanded="false">
-            <span class="service-row__text">
-              <span class="service-row__title">Photography/Photo Editing</span>
-              <span class="service-row__desc">Compelling product, event, and portrait photography that captures real moments in sharp, considered detail.</span>
-            </span>
-            <span class="service-row__arrow">→</span>
-          </button>
-          <div class="service-row__panel">
-            <div class="service-row__panel-inner">
-              <ul class="service-row__list">
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Product and lifestyle shoots</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Event and on-location coverage</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Portraits and professional headshots</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Color grading and retouching</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-row">
-          <button class="service-row__header" type="button" aria-expanded="false">
-            <span class="service-row__text">
-              <span class="service-row__title">Video Editing</span>
-              <span class="service-row__desc">Short-form edits, motion graphics, and color-graded video that bring stories to life and stop the scroll.</span>
-            </span>
-            <span class="service-row__arrow">→</span>
-          </button>
-          <div class="service-row__panel">
-            <div class="service-row__panel-inner">
-              <ul class="service-row__list">
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Short-form edits for reels and social</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Motion graphics and animated titles</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Color grading and sound mixing</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Promotional and event recap videos</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-row">
-          <button class="service-row__header" type="button" aria-expanded="false">
-            <span class="service-row__text">
-              <span class="service-row__title">Social Media Management</span>
-              <span class="service-row__desc">Content calendars, community engagement, and reporting that keep your brand active, consistent, and on-strategy.</span>
-            </span>
-            <span class="service-row__arrow">→</span>
-          </button>
-          <div class="service-row__panel">
-            <div class="service-row__panel-inner">
-              <ul class="service-row__list">
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Content calendars and campaign planning</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Account management and community engagement</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Caption writing and content strategy</span></li>
-                <li><img class="service-row__check" src="assets/images/check-v2.svg" alt="" width="19" height="19" /><span>Performance tracking and monthly reporting</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+        <div class="service-row"><span class="service-row__number">01</span><span class="service-row__text"><strong class="service-row__title">UI/UX DESIGN</strong><span class="service-row__desc">User-centered interfaces and prototypes for intuitive web and mobile products.</span></span><span class="service-row__arrow">→</span></div>
+        <div class="service-row"><span class="service-row__number">02</span><span class="service-row__text"><strong class="service-row__title">GRAPHIC DESIGN</strong><span class="service-row__desc">Distinctive visual identities, marketing materials, and campaign graphics.</span></span><span class="service-row__arrow">→</span></div>
+        <div class="service-row"><span class="service-row__number">03</span><span class="service-row__text"><strong class="service-row__title">PHOTO &amp; VIDEO</strong><span class="service-row__desc">Photography and video content that capture meaningful moments and stories.</span></span><span class="service-row__arrow">→</span></div>
+        <div class="service-row"><span class="service-row__number">04</span><span class="service-row__text"><strong class="service-row__title">SOCIAL MEDIA MANAGEMENT</strong><span class="service-row__desc">Content planning, visual direction, and community engagement for growing brands.</span></span><span class="service-row__arrow">→</span></div>
       </div>
     </div>
   </section>
 
   <!-- ================= ABOUT ================= -->
-  <section class="about" id="about">
-    <div class="about__grid">
-
-      <div class="about__col about__col--left">
-        <h2 class="about__heading">experience</h2>
-        <div class="timeline about-card">
-          <div class="timeline__item">
-            <p class="about-entry__date">2025 - Present</p>
-            <p class="about-entry__title">Asbir Tech</p>
-            <p class="about-entry__desc">UI/UX Designer</p>
-          </div>
-          <div class="timeline__item">
-            <p class="about-entry__date">2021 - Present</p>
-            <p class="about-entry__title">Papelerya PH</p>
-            <p class="about-entry__desc">Vector Artist | Layout Artist</p>
-          </div>
-          <div class="timeline__item">
-            <p class="about-entry__date">2023 - 2025</p>
-            <p class="about-entry__title">The Weekly Sillimanian</p>
-            <p class="about-entry__desc">Graphic Designer</p>
-            <p class="about-entry__desc">Creative Director</p>
-            <p class="about-entry__desc">Photojournalist</p>
-          </div>
-          <div class="timeline__item">
-            <p class="about-entry__date">2023 - 2025</p>
-            <p class="about-entry__title">Silliman University Camera Club</p>
-            <p class="about-entry__desc">Photographer</p>
-            <p class="about-entry__desc">Videographer</p>
-            <p class="about-entry__desc">Video Team Head</p>
-          </div>
-          <div class="timeline__item">
-            <p class="about-entry__date">2021 - 2023</p>
-            <p class="about-entry__title">Kapunungan sa mga<br />Mass Communicators</p>
-            <p class="about-entry__desc">Documentation Committee Head</p>
-            <p class="about-entry__desc">Documentation Committee Member</p>
-            <p class="about-entry__desc">Creatives Committee Member</p>
-          </div>
-        </div>
-
-        <h2 class="about__heading">education</h2>
-        <div class="entry-card about-card about-card--education">
-          <p class="about-entry__date">2021 - 2025</p>
-          <p class="about-entry__title">Silliman University</p>
-          <p class="about-entry__desc">Bachelor of Mass Communication, Cum Laude</p>
-        </div>
+  <section class="about about--orbit" id="about">
+    <div class="about-orbit__inner">
+      <div class="about-orbit__images" aria-hidden="true">
+        <img src="assets/images/work/graphic-design/social-01-talentadong-maskomista-mic-poster.jpg" alt="" />
+        <img src="assets/images/work/video-edits/thumb-2023-mercedes-benz.png" alt="" />
+        <img src="assets/images/work/photography/event-singer-colored-lights.jpg" alt="" />
+        <img src="assets/images/work/ui-ux/event-dashboard-web-app.png" alt="" />
+        <img src="assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg" alt="" />
+        <img src="assets/images/work/video-edits/thumb-diddys.png" alt="" />
+        <img src="assets/images/work/photography/portrait-graduate-red-sash.jpg" alt="" />
+        <img src="assets/images/work/ui-ux/movie-streaming-app-screens.png" alt="" />
+        <img src="assets/images/work/graphic-design/others1-04-talentadong-maskomista-ticket.jpg" alt="" />
+        <img src="assets/images/work/video-edits/thumb-do-street-photography.png" alt="" />
+        <img src="assets/images/work/photography/landscape-heritage-building.jpg" alt="" />
+        <img src="assets/images/work/ui-ux/rewards-loyalty-app-screens.png" alt="" />
       </div>
 
-      <div class="about__col about__col--right">
-        <h2 class="about__heading">certifications</h2>
-        <div class="entry-card about-card about-card--certs">
-          <div class="about-entry">
-            <p class="about-entry__date">April 19, 2026</p>
-            <p class="about-entry__title">Udemy</p>
-            <p class="about-entry__desc">Complete Web &amp; Mobile Designer- UI:UX, Figma, +more</p>
-          </div>
-          <div class="about-entry">
-            <p class="about-entry__date">December 30, 2025</p>
-            <p class="about-entry__title">Udemy</p>
-            <p class="about-entry__desc">Learn Figma: UI/UX Design Masterclass From Beginner to Pro</p>
-          </div>
-          <div class="about-entry">
-            <p class="about-entry__date">December 7, 2025</p>
-            <p class="about-entry__title">Domestika</p>
-            <p class="about-entry__desc">Introduction to UX Design</p>
-          </div>
-          <div class="about-entry">
-            <p class="about-entry__date">October 27, 2025</p>
-            <p class="about-entry__title">Uxcel</p>
-            <p class="about-entry__desc">Product Designer</p>
-          </div>
-        </div>
-
-        <h2 class="about__heading">SOFTWARE SKILLS</h2>
-        <div class="skills-card about-card about-card--pill">
-          <div class="skills-row">
-            <img class="skill-icon" src="assets/images/skill-icon-ps.png" alt="Photoshop" />
-            <img class="skill-icon" src="assets/images/skill-icon-pr.png" alt="Premiere Pro" />
-            <img class="skill-icon" src="assets/images/skill-icon-ai.png" alt="Illustrator" />
-            <img class="skill-icon" src="assets/images/skill-icon-lr-bg.png" alt="Lightroom" />
-            <span class="skill-badge" role="img" aria-label="Figma">
-              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
-              <span class="skill-badge__fill"></span>
-              <img class="skill-badge__glyph" src="assets/images/skill-icon-figma-glyph.png" alt="" style="left:13.15px;top:11.69px;width:31.23px;height:36.16px" />
-            </span>
-            <span class="skill-badge" role="img" aria-label="Canva">
-              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
-              <span class="skill-badge__fill"></span>
-              <span class="skill-badge__crop" style="left:9.31px;top:10.05px;width:40.54px;height:38.9px;border-radius:10.96px"><img src="assets/images/skill-icon-canva-glyph.png" alt="" style="left:-21.62%;top:-29.58%;width:144.59%;height:150.7%" /></span>
-            </span>
-            <span class="skill-badge skill-badge--clip" role="img" aria-label="Procreate">
-              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
-              <span class="skill-badge__fill" style="top:4.93px"></span>
-              <span class="skill-badge__crop" style="left:17.53px;top:1.39px;width:24px;height:57.23px"><img src="assets/images/skill-icon-procreate-glyph.png" alt="" style="left:-80.77%;top:-8.06%;width:257.69%;height:108.06%" /></span>
-            </span>
-            <span class="skill-badge" role="img" aria-label="CapCut">
-              <img class="skill-badge__bg" src="assets/images/skill-icon-badge-bg.png" alt="" />
-              <span class="skill-badge__fill"></span>
-              <span class="skill-badge__crop" style="left:15.89px;top:18.81px;width:27.41px;height:21.35px"><img src="assets/images/skill-icon-capcut-glyph.png" alt="" style="left:-36.54%;top:-61.11%;width:173.08%;height:222.22%" /></span>
-            </span>
-          </div>
-        </div>
-
-        <h2 class="about__heading about__heading--lg">language</h2>
-        <div class="langs-card about-card about-card--pill about-card--langs">
-          <div class="lang"><span class="lang__name">Cebuano</span><span class="lang__level">(Native)</span></div>
-          <div class="lang"><span class="lang__name">English</span><span class="lang__level">(Proficient)</span></div>
-          <div class="lang"><span class="lang__name">Filipino</span><span class="lang__level">(Proficient)</span></div>
-        </div>
+      <div class="about-orbit__content">
+        <h2>Through years of working across design, photography, video, and digital experiences, I’ve helped turn ideas into thoughtful and engaging creative work.</h2>
+        <p class="about-orbit__lead">My passion lies in creating visuals and experiences that feel purposeful, memorable, and genuinely connected to the people they’re made for.</p>
+        <a class="about-orbit__link" href="about.html">ABOUT ME</a>
       </div>
-
     </div>
   </section>
 
@@ -340,6 +211,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <script src="assets/js/main.js?v=20260923f"></script>
+  <script src="assets/js/main.js?v=20260924p"></script>
 </body>
 </html>
