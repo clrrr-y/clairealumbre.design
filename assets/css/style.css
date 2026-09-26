@@ -2717,8 +2717,8 @@ ul {
 .projects__intro p {
   margin: 6px 0 0;
   color: rgba(29, 29, 29, .66);
-  font-size: 18px;
-  line-height: 1.45;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.5;
 }
 
 .project-stack {

@@ -497,9 +497,15 @@ if (hasGSAP && window.ScrollTrigger) {
     if (reduceMotion.matches) return;
 
     const stackTop = stack.getBoundingClientRect().top;
+    const stackStyles = getComputedStyle(stack);
+    const rowGap = parseFloat(stackStyles.rowGap) || parseFloat(stackStyles.gap) || 0;
+    let flowOffset = 0;
     const progress = cards.map((card) => {
       const stickyTop = parseFloat(getComputedStyle(card).top) || 0;
-      const naturalTop = stackTop + card.offsetTop;
+      // Use the cards' normal-flow heights, not offsetTop: sticky positioning
+      // can change offsetTop as scrolling advances and break later handoffs.
+      const naturalTop = stackTop + flowOffset;
+      flowOffset += card.offsetHeight + rowGap;
       const approachDistance = Math.min(180, Math.max(120, window.innerHeight * 0.28));
       const start = stickyTop + approachDistance;
       return clamp((start - naturalTop) / approachDistance, 0, 1);
@@ -509,9 +515,9 @@ if (hasGSAP && window.ScrollTrigger) {
       const enter = progress[index];
       const cover = progress[index + 1] || 0;
       card.style.setProperty('--folder-y', `${((1 - enter) * 60).toFixed(1)}px`);
-      // Keep the subtle depth during the handoff, then align the covered folder
-      // exactly beneath the active one so no previous card edge/content peeks out.
-      const handoffScale = cover >= 0.999 ? 1 : 1 - cover * 0.03;
+      // Repeat the same scale handoff for every folder. Completed folders stay
+      // tucked beneath the next full-size folder instead of snapping back.
+      const handoffScale = 1 - cover * 0.03;
       card.style.setProperty('--cover-scale', handoffScale.toFixed(3));
       card.style.setProperty('--image-parallax', `${((enter - 0.5) * 14).toFixed(1)}px`);
     });
