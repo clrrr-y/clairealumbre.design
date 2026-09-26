@@ -251,14 +251,18 @@ if (hasGSAP && window.ScrollTrigger) {
   const thumbnails = Array.from(orbit.querySelectorAll('img'));
   const thumbnailTilts = [-14, -9, -4, 8, 14, 12, 7, -5, -10, -16, -12, 10];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reducedMotion.matches) return;
+  const mobileLayout = window.matchMedia('(max-width: 767px)');
 
   const baseAngles = thumbnails.map((_, index) => (Math.PI * 2 * index) / thumbnails.length);
-  const start = performance.now();
   const duration = 52000;
+  let start = 0;
+  let frame = 0;
 
   function animate(now) {
-    if (reducedMotion.matches) return;
+    if (reducedMotion.matches || mobileLayout.matches) {
+      frame = 0;
+      return;
+    }
     const rotation = ((now - start) / duration) * Math.PI * 2;
     thumbnails.forEach((thumbnail, index) => {
       const angle = baseAngles[index] + rotation;
@@ -271,10 +275,30 @@ if (hasGSAP && window.ScrollTrigger) {
       thumbnail.style.top = `${y.toFixed(2)}%`;
       thumbnail.style.transform = `translate(-50%, -50%) rotate(${tilt}deg)`;
     });
-    window.requestAnimationFrame(animate);
+    frame = window.requestAnimationFrame(animate);
   }
 
-  window.requestAnimationFrame(animate);
+  function syncOrbit() {
+    if (frame) window.cancelAnimationFrame(frame);
+    frame = 0;
+
+    if (mobileLayout.matches) {
+      thumbnails.forEach((thumbnail) => {
+        thumbnail.style.removeProperty('left');
+        thumbnail.style.removeProperty('top');
+        thumbnail.style.removeProperty('transform');
+      });
+      return;
+    }
+
+    if (reducedMotion.matches) return;
+    start = performance.now();
+    frame = window.requestAnimationFrame(animate);
+  }
+
+  mobileLayout.addEventListener('change', syncOrbit);
+  reducedMotion.addEventListener('change', syncOrbit);
+  syncOrbit();
 })();
 
 // ---------------------------------------------------------------------------
@@ -443,31 +467,88 @@ if (hasGSAP && window.ScrollTrigger) {
 })();
 
 // ---------------------------------------------------------------------------
-// Featured Projects: restrained scroll reveal for the Figma folder cards
+// Featured Projects: scroll-linked folder stacking and restrained image parallax
 // ---------------------------------------------------------------------------
 (function () {
   const stack = document.querySelector('.project-stack');
   const cards = Array.from(document.querySelectorAll('[data-project-card]'));
   if (!stack || !cards.length) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    cards.forEach((card) => card.classList.add('is-visible'));
-    return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduceMotion.matches) return;
+
+  let frame = 0;
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  const updateStack = () => {
+    frame = 0;
+    if (reduceMotion.matches) return;
+
+    const stackTop = stack.getBoundingClientRect().top;
+    const progress = cards.map((card) => {
+      const stickyTop = parseFloat(getComputedStyle(card).top) || 0;
+      const naturalTop = stackTop + card.offsetTop;
+      const approachDistance = Math.min(180, Math.max(120, window.innerHeight * 0.28));
+      const start = stickyTop + approachDistance;
+      return clamp((start - naturalTop) / approachDistance, 0, 1);
+    });
+
+    cards.forEach((card, index) => {
+      const enter = progress[index];
+      const cover = progress[index + 1] || 0;
+      card.style.setProperty('--folder-y', `${((1 - enter) * 60).toFixed(1)}px`);
+      // Keep the subtle depth during the handoff, then align the covered folder
+      // exactly beneath the active one so no previous card edge/content peeks out.
+      const handoffScale = cover >= 0.999 ? 1 : 1 - cover * 0.03;
+      card.style.setProperty('--cover-scale', handoffScale.toFixed(3));
+      card.style.setProperty('--image-parallax', `${((enter - 0.5) * 14).toFixed(1)}px`);
+    });
+  };
+
+  const scheduleUpdate = () => {
+    if (frame) return;
+    frame = window.requestAnimationFrame(updateStack);
+  };
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  reduceMotion.addEventListener?.('change', scheduleUpdate);
+  updateStack();
+})();
+
+// ---------------------------------------------------------------------------
+// Contact CTA: in-view reveal and simple mailto form
+// ---------------------------------------------------------------------------
+(function () {
+  const section = document.querySelector('.contact-cta');
+  const panel = section?.querySelector('[data-contact-panel]');
+  if (!section || !panel) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+    section.classList.add('contact-cta--motion-ready');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        panel.classList.add('is-visible');
+        observer.unobserve(panel);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    observer.observe(panel);
+  } else {
+    panel.classList.add('is-visible');
   }
 
-  stack.classList.add('is-reveal-ready');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -8% 0px',
+  const form = section.querySelector('[data-inquiry-form]');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const values = new FormData(form);
+    const name = String(values.get('name') || '').trim();
+    const email = String(values.get('email') || '').trim();
+    const service = String(values.get('service') || '').trim();
+    const message = String(values.get('message') || '').trim();
+    const subject = `Portfolio inquiry — ${name}`;
+    const body = [`Name: ${name}`, `Email: ${email}`, `Service needed: ${service}`, '', 'What can I help you with?', message].join('\n');
+    window.location.href = `mailto:clairealumbre@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
-
-  cards.forEach((card) => observer.observe(card));
 })();

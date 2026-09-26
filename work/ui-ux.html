@@ -3,70 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UI/UX Designs — Claire Alumbre</title>
-  <meta name="description" content="Claire Alumbre — freelance graphic designer, photographer, video editor and UI/UX designer." />
+  <title>UI/UX Design Projects — Claire Alumbre</title>
+  <meta name="description" content="A selection of digital experiences designed around clarity, usability, and meaningful user interactions." />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260926santino" />
+  <link rel="stylesheet" href="../assets/css/uiux-projects.css?v=20260926b" />
 </head>
-<body>
-
-  <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
-
+<body class="uiux-page">
   <nav class="nav" id="nav">
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <div class="nav__right">
       <ul class="nav__links">
-        <li><a href="../index.html#home" class="is-active">HOME</a></li>
+        <li><a href="../index.html#home">HOME</a></li>
         <li><a href="../index.html#about">ABOUT</a></li>
-        <li><a href="../index.html#projects">PROJECTS</a></li>
+        <li><a href="../index.html#services">SERVICES</a></li>
+        <li><a href="../index.html#projects" class="is-active">PROJECTS</a></li>
       </ul>
       <a href="../index.html#contact" class="nav__cta">CONTACT</a>
     </div>
   </nav>
 
-  <header class="work-header">
-    <p class="work-header__eyebrow">MY WORK</p>
-    <h1>UI/UX Designs</h1>
-  </header>
+  <main class="uiux-listing" id="uiux-projects">
+    <header class="uiux-listing__header" data-uiux-reveal>
+      <p class="uiux-eyebrow">SELECTED WORK · UI/UX</p>
+      <h1>UI/UX DESIGN PROJECTS</h1>
+      <p class="uiux-lede">A selection of digital experiences designed around clarity, usability, and meaningful user interactions.</p>
+    </header>
 
-  <main>
-    <div class="section-intro">
-      <p class="section-intro__desc">Mobile and web product screens, grouped by platform. Click a card to see the full set.</p>
-    </div>
-
-    <div class="stack">
-      <a class="stack-card" href="ui-ux/mobile.html" style="background-image:url('../assets/images/work/ui-ux/rewards-loyalty-app-screens.png')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">UI/UX DESIGN</span>
-          <h3>Mobile</h3>
-          <p>App screens for a rewards platform, a tourism pass, a streaming app, and a city services app.</p>
-        </span>
+    <section class="uiux-project-grid" aria-label="UI/UX design projects">
+      <a class="uiux-project-card" data-uiux-project-link href="ui-ux/case-study.html?project=plaza" data-project="plaza" data-uiux-reveal>
+        <div class="uiux-card-preview" aria-hidden="true"><img class="uiux-card-figma-preview" src="../assets/images/work/ui-ux/plaza/chat-thread.png" alt="" loading="lazy" /></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">MOBILE APP DESIGN</span><h2>Project Plaza</h2><p>Chat, connect, and transact in one place.</p><span class="uiux-card-action">VIEW CASE STUDY <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="stack-card" href="ui-ux/web.html" style="background-image:url('../assets/images/work/ui-ux/event-management-web-app.png')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">UI/UX DESIGN</span>
-          <h3>Web</h3>
-          <p>Dashboard and listing pages for an event management web app.</p>
-        </span>
+      <a class="uiux-project-card" data-uiux-project-link href="ui-ux/case-study.html?project=analytics" data-project="analytics" data-uiux-reveal>
+        <div class="uiux-card-preview" aria-hidden="true"><div class="uiux-browser"><div class="mock-browserbar"><i></i><i></i><i></i></div><div class="mock-dashboard"><aside></aside><div class="mock-dashboard__main"><b></b><div class="mock-stats"><i></i><i></i><i></i></div><div class="mock-chart"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="mock-table"><i></i><i></i><i></i></div></div></div></div></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">WEB APPLICATION</span><h2>Analytics Dashboard</h2><p>A data-focused dashboard designed to make complex business information easier to understand.</p><span class="uiux-card-action">VIEW CASE STUDY <span aria-hidden="true">→</span></span></div>
       </a>
-    </div>
-
-    <a class="work-footer glass-card" href="#">
-      <img src="../assets/images/work/ui-ux/qr-scan-more.svg" alt="QR code" />
-      <div>
-        <p class="work-header__eyebrow" style="margin-bottom:6px;">SCAN TO VIEW MORE</p>
-        <h3>UI/UX Designs</h3>
-      </div>
-    </a>
+      <a class="uiux-project-card" data-uiux-project-link href="ui-ux/case-study.html?project=booking" data-project="booking" data-uiux-reveal>
+        <div class="uiux-card-preview" aria-hidden="true"><div class="uiux-device uiux-device--phone"><div class="uiux-screen"><span class="mock-brand">stay / away</span><i class="mock-photo"></i><b class="mock-lines"></b><i class="mock-calendar"></i><i class="mock-booking"></i><i class="mock-nav"></i></div></div></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">RESPONSIVE PRODUCT DESIGN</span><h2>Booking Experience</h2><p>A streamlined booking flow created to reduce friction and help users complete reservations confidently.</p><span class="uiux-card-action">VIEW CASE STUDY <span aria-hidden="true">→</span></span></div>
+      </a>
+      <a class="uiux-project-card" data-uiux-project-link href="ui-ux/case-study.html?project=portfolio" data-project="portfolio" data-uiux-reveal>
+        <div class="uiux-card-preview" aria-hidden="true"><div class="uiux-browser uiux-browser--portfolio"><div class="mock-browserbar"><i></i><i></i><i></i></div><div class="mock-portfolio"><b></b><div><i></i><i></i><i></i></div></div></div></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">WEBSITE DESIGN</span><h2>Creative Portfolio Platform</h2><p>A modern portfolio experience that organizes creative work through clear and engaging visual storytelling.</p><span class="uiux-card-action">VIEW CASE STUDY <span aria-hidden="true">→</span></span></div>
+      </a>
+    </section>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <script src="../assets/js/main.js?v=20260924a"></script>
+  <footer class="uiux-listing-footer"><a href="../index.html#projects">← BACK TO FEATURED PROJECTS</a><span>© 2026 Claire Alumbre</span></footer>
+  <script src="../assets/js/main.js?v=20260926a"></script>
+  <script src="../assets/js/uiux-projects.js?v=20260926b"></script>
 </body>
 </html>

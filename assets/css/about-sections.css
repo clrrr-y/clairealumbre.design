@@ -1,0 +1,232 @@
+/* Keep Education, Languages and Tech Stack as three independent About cards. */
+body.about-page #details .about-page__detail-sections,
+body.about-page #details .about-page__detail-section {
+  width: min(1196px, 100%);
+  margin-inline: auto;
+}
+
+body.about-page #details .about-page__detail-sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+body.about-page #details .about-page__detail-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Legacy #languages rules added a second white frame around this section. */
+body.about-page #details section#languages.about-page__detail-section {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+}
+
+body.about-page #details .about-page__detail-section > .about-page__tag {
+  align-self: center;
+  margin: 0 auto 24px;
+}
+
+body.about-page #details .about-page__individual-card,
+body.about-page #details #tech-stack.about-page__tech-stack-frame {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 28px;
+  border: 1px solid rgba(29, 29, 29, .1);
+  border-radius: 42px;
+  background: #f4f4f4;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .06);
+  text-align: left;
+}
+
+body.about-page #details .about-page__individual-card > .about-page__group-content {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 24px 30px;
+  border: 0;
+  border-radius: 34px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .07);
+}
+
+body.about-page #details #education .about-page__feature-card {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+}
+
+body.about-page #details #education .about-page__feature-card time {
+  display: block;
+  margin-bottom: 4px;
+  color: #888;
+  font-size: 15px;
+}
+
+body.about-page #details #education .about-page__feature-card h3 {
+  margin: 0 0 6px;
+  color: #202020;
+  font-size: clamp(22px, 2vw, 28px);
+}
+
+body.about-page #details #education .about-page__feature-card p {
+  margin: 0;
+  color: #666;
+  font-size: 17px;
+}
+
+body.about-page #details #languages .about-page__group-content {
+  padding: 20px 24px;
+}
+
+body.about-page #details #languages .about-page__language-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.about-page #details #languages .about-page__language-grid > span {
+  display: flex;
+  min-width: 0;
+  min-height: 72px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(29, 29, 29, .08);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .07);
+}
+
+body.about-page #details #languages .about-page__language-grid strong {
+  color: #171717;
+  font-size: clamp(17px, 1.8vw, 24px);
+  font-weight: 700;
+}
+
+body.about-page #details #languages .about-page__language-grid small {
+  color: #777;
+  font-size: 15px;
+}
+
+body.about-page #details .about-page__detail-section--tech {
+  margin-top: 32px;
+}
+
+body.about-page #details #tech-stack.about-page__tech-stack-frame {
+  position: relative;
+  padding: 28px;
+}
+
+body.about-page #details #tech-stack .about-page__tools-shell {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.about-page #details #tech-stack .about-page__tools {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+}
+
+body.about-page #details #tech-stack .about-page__tool {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+
+body.about-page #details #tech-stack .about-page__tool-face {
+  padding: 22px !important;
+}
+
+body.about-page #details #tech-stack .about-page__tool-face--front {
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+body.about-page #details #tech-stack .about-page__tool-face--front img {
+  width: clamp(84px, 11vw, 150px) !important;
+  height: clamp(84px, 11vw, 150px) !important;
+  max-width: 68% !important;
+  max-height: 68% !important;
+  object-fit: contain;
+}
+
+body.about-page #details #tech-stack .about-page__tool-face--front strong {
+  font-size: 17px;
+}
+
+@media (max-width: 780px) {
+  body.about-page #details .about-page__section--details,
+  body.about-page #details .about-page__detail-sections,
+  body.about-page #details .about-page__detail-section {
+    width: 100%;
+  }
+
+  body.about-page #details .about-page__detail-sections { gap: 24px; }
+
+  body.about-page #details .about-page__individual-card,
+  body.about-page #details #tech-stack.about-page__tech-stack-frame {
+    padding: 18px;
+    border-radius: 30px;
+  }
+
+  body.about-page #details .about-page__individual-card > .about-page__group-content {
+    min-height: 130px;
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  body.about-page #details #languages .about-page__language-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body.about-page #details #languages .about-page__language-grid > span {
+    min-height: 60px;
+  }
+
+  body.about-page #details #tech-stack .about-page__tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 14px;
+  }
+
+  body.about-page #details #tech-stack .about-page__tool-face { padding: 14px !important; }
+  body.about-page #details #tech-stack .about-page__tool-face--front img {
+    width: clamp(72px, 22vw, 110px) !important;
+    height: clamp(72px, 22vw, 110px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.about-page #details .about-page__detail-section > .about-page__tag {
+    align-self: flex-start;
+    margin: 0 0 16px;
+  }
+
+  body.about-page #details #education .about-page__feature-card h3 { font-size: 22px; }
+  body.about-page #details #education .about-page__feature-card p { font-size: 15px; }
+  body.about-page #details #languages .about-page__language-grid > span { justify-content: flex-start; }
+}

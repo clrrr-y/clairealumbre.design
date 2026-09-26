@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Claire Alumbre</title>
   <meta name="description" content="About Claire Alumbre — experience, education, certifications, languages, and tech stack." />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260926orbitfade" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260926education-language-frames" />
+  <link rel="stylesheet" href="assets/css/about-sections.css?v=20260926individual-cards" />
 </head>
 <body class="about-page">
   <a class="back-link" href="index.html#about" aria-label="Back to portfolio" title="Back to portfolio">
@@ -33,7 +34,6 @@
     <section class="about-page__section" id="experience">
       <div class="about-page__section-heading">
         <span class="about-page__tag">MY EXPERIENCE</span>
-        <h2>Building brands through design</h2>
       </div>
       <div class="about-page__experience-shell">
         <p class="about-page__experience-lead">My work sits at the intersection of strategy and design</p>
@@ -49,33 +49,52 @@
     </section>
 
     <section class="about-page__section about-page__section--soft" id="certifications">
-      <div class="about-page__certifications-shell">
-        <span class="about-page__tag">MY CERTIFICATIONS</span>
-        <div class="about-page__cards about-page__cards--four">
-          <article><time>April 19, 2026</time><h3>Complete Web &amp; Mobile Designer</h3><p>UI/UX, Figma, and more · Udemy</p></article>
-          <article><time>December 30, 2025</time><h3>UI/UX Design Masterclass</h3><p>Figma from beginner to pro · Udemy</p></article>
-          <article><time>December 7, 2025</time><h3>Introduction to UX Design</h3><p>Domestika</p></article>
-          <article><time>October 27, 2025</time><h3>Product Designer</h3><p>Uxcel</p></article>
+      <span class="about-page__tag">MY CERTIFICATIONS</span>
+      <div class="about-page__certifications-shell about-page__group-shell">
+        <div class="about-page__group-content">
+          <div class="about-page__cards about-page__cards--four">
+            <article><time>April 19, 2026</time><h3>Complete Web &amp; Mobile Designer</h3><p>UI/UX, Figma, and more · Udemy</p></article>
+            <article><time>December 30, 2025</time><h3>UI/UX Design Masterclass</h3><p>Figma from beginner to pro · Udemy</p></article>
+            <article><time>December 7, 2025</time><h3>Introduction to UX Design</h3><p>Domestika</p></article>
+            <article><time>October 27, 2025</time><h3>Product Designer</h3><p>Uxcel</p></article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="about-page__section about-page__section--details" id="details">
-      <div class="about-page__details-frame">
-        <div class="about-page__detail" id="education">
+      <div class="about-page__detail-sections">
+        <section class="about-page__detail-section" id="education">
           <span class="about-page__tag">MY EDUCATION</span>
-          <div class="about-page__feature-card"><time>2021 — 2025</time><h3>Silliman University</h3><p>Bachelor of Mass Communication, Cum Laude</p></div>
-        </div>
-        <div class="about-page__detail" id="languages">
+          <div class="about-page__group-shell about-page__individual-card">
+            <div class="about-page__group-content">
+              <div class="about-page__feature-card">
+                <time>2021–2025</time>
+                <h3>Silliman University</h3>
+                <p>Bachelor of Mass Communication, Cum Laude</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about-page__detail-section" id="languages">
           <span class="about-page__tag">MY LANGUAGES</span>
-          <div class="about-page__pills"><span>Cebuano <small>Native</small></span><span>English <small>Proficient</small></span><span>Filipino <small>Proficient</small></span></div>
-        </div>
+          <div class="about-page__group-shell about-page__individual-card">
+            <div class="about-page__group-content">
+              <div class="about-page__language-grid">
+                <span><strong>Cebuano</strong><small>Native</small></span>
+                <span><strong>English</strong><small>Proficient</small></span>
+                <span><strong>Filipino</strong><small>Proficient</small></span>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <div class="about-page__tech-stack-frame" id="tech-stack">
+      <section class="about-page__detail-section about-page__detail-section--tech">
         <span class="about-page__tag">MY TECH STACK</span>
-        <div class="about-page__flip-tooltip" id="techStackFlipTooltip" aria-hidden="true">Tap to Flip</div>
-        <div class="about-page__tools-shell">
+        <div class="about-page__tech-stack-frame" id="tech-stack">
+          <div class="about-page__flip-tooltip" id="techStackFlipTooltip" aria-hidden="true">Tap to Flip</div>
+          <div class="about-page__tools-shell">
           <div class="about-page__tools">
             <button class="about-page__tool" type="button" aria-pressed="false">
               <span class="about-page__tool-inner">
@@ -168,8 +187,9 @@
               </span>
             </button>
           </div>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
 
   </main>
