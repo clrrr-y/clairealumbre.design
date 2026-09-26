@@ -18,23 +18,35 @@ if (hasGSAP && window.ScrollTrigger) {
   window.addEventListener('scroll', onScroll, { passive: true });
 
   if (toggle) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', () => {
       const opening = !nav.classList.contains('is-open');
       nav.classList.toggle('is-open', opening);
+      toggle.setAttribute('aria-expanded', String(opening));
 
       if (hasGSAP) {
         const links = nav.querySelectorAll('.nav__links li, .nav__cta');
         if (opening) {
+          const mobile = window.matchMedia('(max-width: 780px)').matches;
           gsap.fromTo(
             links,
-            { y: 16, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', stagger: 0.06, delay: 0.05 }
+            { x: mobile ? 16 : 0, y: mobile ? 0 : 16, opacity: 0 },
+            { x: 0, y: 0, opacity: 1, duration: 0.32, ease: 'power2.out', stagger: 0.05, delay: 0.04 }
           );
         }
       }
     });
     nav.querySelectorAll('.nav__links a, .nav__cta').forEach((link) => {
-      link.addEventListener('click', () => nav.classList.remove('is-open'));
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || !nav.classList.contains('is-open')) return;
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
     });
   }
 
