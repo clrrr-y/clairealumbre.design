@@ -4,114 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Graphic Designs — Claire Alumbre</title>
-  <meta name="description" content="Claire Alumbre — graphic design portfolio: social media publications, merch designs, logo designs and more." />
+  <meta name="description" content="Claire Alumbre — graphic design portfolio: social media, merch designs, logo designs and more." />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260926santino" />
-  <style>
-    /* Page-specific: small caption under the footer QR code ("Graphic
-       Designs"), since the shared .work-footer only defines img + h3. */
-    .work-footer__qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .work-footer__qr-caption {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/uiux-projects.css?v=20260927graphic" />
 </head>
-<body>
-
+<body class="uiux-page graphic-page">
   <a class="back-link" href="../index.html#projects" aria-label="Back to portfolio" title="Back to portfolio"><img src="../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
 
   <nav class="nav" id="nav">
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <div class="nav__right">
       <ul class="nav__links">
         <li><a href="../index.html#home" class="is-active">HOME</a></li>
         <li><a href="../index.html#about">ABOUT</a></li>
-        <li><a href="../index.html#projects">PROJECTS</a></li>
+        <li><a href="../index.html#services">SERVICES</a></li>
+        <li><a href="../index.html#projects" class="is-active">PROJECTS</a></li>
       </ul>
       <a href="../index.html#contact" class="nav__cta">CONTACT</a>
     </div>
   </nav>
 
-  <header class="work-header">
-    <p class="work-header__eyebrow">MY WORK</p>
-    <h1>Graphic Designs</h1>
-  </header>
+  <main class="uiux-listing" id="graphic-projects">
+    <header class="uiux-listing__header" data-uiux-reveal>
+      <h1>GRAPHIC DESIGN PROJECTS</h1>
+      <p class="uiux-lede">A collection of posters, brand marks, merchandise, print materials, and vector artwork made for real people and projects.</p>
+    </header>
 
-  <main>
-    <div class="container">
-      <div class="section-intro">
-        <p class="section-intro__desc">Five collections spanning social campaigns, merch, logos, print pieces, and vector art. Scroll through, or click straight into one.</p>
-      </div>
-    </div>
-
-    <div class="stack">
-      <a class="stack-card stack-card--folder" href="graphic-design/social-media.html" style="background-image:url('../assets/images/work/graphic-design/social-18-the-crown-awaits-pageant-poster.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">GRAPHIC DESIGN</span>
-          <h3>Social Media Publications</h3>
-          <p>Event posters, campaign graphics, and social cards for Asbir Tech, The Weekly Sillimanian, and campus organizations.</p>
-        </span>
+    <section class="uiux-project-grid" aria-label="Graphic design project collections">
+      <a class="uiux-project-card" href="graphic-design/social-media.html" data-uiux-reveal>
+        <div class="uiux-card-preview uiux-card-preview--cover" aria-hidden="true"><img class="uiux-card-cover" src="../assets/images/work/graphic-design/social-18-the-crown-awaits-pageant-poster.jpg" alt="" loading="lazy" /></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">GRAPHIC DESIGN</span><h2>Social Media</h2><p>Event posters, campaign graphics, and social cards for organizations and brands.</p><span class="uiux-card-action">VIEW COLLECTION <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="stack-card stack-card--folder" href="graphic-design/logos.html" style="background-image:url('../assets/images/work/graphic-design/logo-02-motobizz.png')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">GRAPHIC DESIGN</span>
-          <h3>Logofolio</h3>
-          <p>A collection of logo marks and brand icons for small businesses, campus products, and passion projects.</p>
-        </span>
+      <a class="uiux-project-card" href="graphic-design/logos.html" data-uiux-reveal>
+        <div class="uiux-card-preview uiux-card-preview--cover" aria-hidden="true"><img class="uiux-card-cover" src="../assets/images/work/graphic-design/logo-02-motobizz.png" alt="" loading="lazy" /></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">GRAPHIC DESIGN</span><h2>Logofolio</h2><p>Logo marks and brand icons for small businesses, campus products, and passion projects.</p><span class="uiux-card-action">VIEW COLLECTION <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="stack-card stack-card--folder" href="graphic-design/merch.html" style="background-image:url('../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">GRAPHIC DESIGN</span>
-          <h3>Merch</h3>
-          <p>Jersey, lanyard, and t-shirt mockups translating brand identities onto physical merchandise.</p>
-        </span>
+      <a class="uiux-project-card" href="graphic-design/merch.html" data-uiux-reveal>
+        <div class="uiux-card-preview uiux-card-preview--cover" aria-hidden="true"><img class="uiux-card-cover" src="../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg" alt="" loading="lazy" /></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">GRAPHIC DESIGN</span><h2>Merch</h2><p>Jersey, lanyard, and t-shirt mockups translating identities onto physical merchandise.</p><span class="uiux-card-action">VIEW COLLECTION <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="stack-card stack-card--folder" href="graphic-design/others.html" style="background-image:url('../assets/images/work/graphic-design/others1-06-dapig-brochure-mockup.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">GRAPHIC DESIGN</span>
-          <h3>Print Materials</h3>
-          <p>News layouts, event tickets, bingo cards, and brochures rounding out the catalog.</p>
-        </span>
+      <a class="uiux-project-card" href="graphic-design/others.html" data-uiux-reveal>
+        <div class="uiux-card-preview uiux-card-preview--cover" aria-hidden="true"><img class="uiux-card-cover" src="../assets/images/work/graphic-design/others1-06-dapig-brochure-mockup.jpg" alt="" loading="lazy" /></div>
+        <div class="uiux-project-card__body"><span class="uiux-project-type">GRAPHIC DESIGN</span><h2>Print Materials</h2><p>News layouts, event tickets, bingo cards, and brochures rounding out the catalog.</p><span class="uiux-card-action">VIEW COLLECTION <span aria-hidden="true">→</span></span></div>
       </a>
-      <a class="stack-card stack-card--folder" href="../vectors.html" style="background-image:url('../assets/images/work/vectors/individual-seated-portrait-tshi.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">GRAPHIC DESIGN</span>
-          <h3>Vector Art</h3>
-          <p>Custom vector portraits, illustrations, pet art, family artwork, and gift tag designs.</p>
-        </span>
-      </a>
-    </div>
-
-    <a class="work-footer" href="#">
-      <div class="work-footer__qr-wrap">
-        <img src="../assets/images/work/graphic-design/qr-code-composited.jpg" alt="QR code" />
-        <span class="work-footer__qr-caption">Graphic Designs</span>
-      </div>
-      <h3>Scan to<br>view more</h3>
-    </a>
+    </section>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
+  <footer class="uiux-listing-footer"><span>© 2026 Claire Alumbre</span></footer>
   <script src="../assets/js/main.js?v=20260924a"></script>
-<script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/insights/script.js"></script></body>
+  <script src="../assets/js/uiux-projects.js?v=20260927graphic"></script>
+</body>
 </html>

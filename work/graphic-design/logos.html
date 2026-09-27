@@ -6,63 +6,241 @@
   <title>Logo Designs — Claire Alumbre</title>
   <meta name="description" content="Claire Alumbre — logo design: brand marks and icons." />
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260926santino" />
+  <link rel="stylesheet" href="../../assets/css/graphic-category-pages.css?v=20260928logohover" />
   <style>
-    /* Page-specific: small caption under the footer QR code, since the
-       shared .work-footer only defines img + h3. */
-    .work-footer__qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
+    .logo-card {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 3 / 4;
+      padding: 0 !important;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      position: relative;
+      transform: translateZ(0);
+      transition: transform 320ms cubic-bezier(.2, 1.55, .45, 1), box-shadow 320ms cubic-bezier(.2, 1.55, .45, 1);
+      will-change: transform;
     }
 
-    .work-footer__qr-caption {
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      .logo-card:hover,
+      .logo-card:focus-visible {
+        z-index: 3;
+        transform: translateY(-14px) scale(1.08);
+        box-shadow: 0 26px 52px rgba(0, 0, 0, 0.22);
+      }
+    }
+
+    .logo-card .about-page__tool-inner {
+      display: grid;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .logo-card .about-page__tool-face--front {
+      flex-direction: column;
+      gap: 12px !important;
+    }
+
+    .logo-card .about-page__tool-face--front img {
+      width: clamp(110px, 16vw, 190px) !important;
+      height: clamp(110px, 16vw, 190px) !important;
+      max-width: 86%;
+      max-height: 78%;
+    }
+
+    .logo-card.logo-card--large .about-page__tool-face--front img {
+      width: clamp(140px, 20vw, 230px) !important;
+      height: clamp(140px, 20vw, 230px) !important;
+      max-width: 90%;
+      max-height: 84%;
+    }
+
+    .logo-card .about-page__tool-face--back {
+      position: relative;
+      inset: auto;
+      grid-area: 1 / 1;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      padding: 36px 40px !important;
+      border: 0;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-align: left;
+    }
+
+    .logo-card .about-page__tool-face--front {
+      position: relative;
+      inset: auto;
+      grid-area: 1 / 1;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .logo-card__back-content {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .logo-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 24px;
+    }
+
+    .logo-card__eyebrow {
+      display: block;
+      margin-bottom: 9px;
+      color: #777;
       font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      line-height: 1;
       text-transform: uppercase;
-      color: var(--ink-soft);
     }
 
-    /* The "rewards" logo keeps its wordmark as live text in the source
-       design rather than baking it into the icon image, so it's
-       reproduced the same way here. */
-    .work-item__logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      max-width: 80%;
-      max-height: 80%;
-    }
-
-    .work-item__logo img {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 60%;
-      object-fit: contain;
-    }
-
-    .work-item__logo-caption {
+    .logo-card__title {
       margin: 0;
-      text-align: center;
-      font-weight: 800;
-      font-size: 16px;
-      line-height: 1.2;
+      color: #111;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.15;
     }
 
-    .work-item__logo-caption span {
+    .logo-card__dates {
       display: block;
-      font-weight: 400;
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      color: var(--ink-soft);
+      margin-top: 10px;
+      color: #666;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      text-transform: uppercase;
     }
+
+    .logo-card__dates b {
+      padding: 0 5px;
+      font-weight: 500;
+    }
+
+    .logo-card__meta {
+      display: flex;
+      flex-shrink: 0;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 8px;
+      color: #333;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .logo-card__meta-pill {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(91, 190, 232, 0.16);
+      color: #24647f;
+      font-size: 11px;
+    }
+
+    .logo-card__description {
+      margin: 0;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .logo-card .about-page__tool-face--back .logo-card__back-content {
+      display: block;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    .logo-card .about-page__tool-face--back .logo-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .logo-card .about-page__tool-face--back .logo-card__meta {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      color: #333;
+      font-size: 12px;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    .logo-card .about-page__tool-face--back .logo-card__eyebrow {
+      color: #777;
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .logo-card .about-page__tool-face--back .logo-card__meta-pill {
+      color: #24647f;
+      font-size: 11px;
+      line-height: 1.2;
+      padding: 7px 11px !important;
+      border: 0 !important;
+      border-radius: 999px;
+      background: rgba(91, 190, 232, 0.16) !important;
+    }
+
+    .logo-card .about-page__tool-face--back .logo-card__dates {
+      display: block;
+      margin-top: 10px;
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      color: #666;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 620px) {
+      .logo-card .about-page__tool-face--back { padding: 28px 24px !important; }
+      .logo-card__header { flex-direction: column; gap: 18px; }
+      .logo-card__meta { align-items: flex-start; text-align: left; }
+      .logo-card__title { font-size: 27px; }
+    }
+
   </style>
 </head>
-<body>
+<body class="graphic-category-page">
 
   <a class="back-link" href="../graphic-design.html" aria-label="Back to graphic design projects" title="Back to graphic design projects"><img src="../../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
 
@@ -80,63 +258,74 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image:url('../../assets/images/work/graphic-design/logo-02-motobizz.png')">
+  <header class="case-hero" data-hero-images="../../assets/images/work/graphic-design/logo-02-motobizz.png|../../assets/images/work/graphic-design/logo-03-buddy-burgers.svg|../../assets/images/work/graphic-design/logo-04-nature-bulletin.png|../../assets/images/work/graphic-design/logo-05-kooky.svg|../../assets/images/work/graphic-design/logo-06-printrad.svg">
+    <div class="case-hero__media is-active" data-hero-slide="0"></div>
+    <div class="case-hero__media" data-hero-slide="1"></div>
     <div class="case-hero__scrim"></div>
-    <div class="case-hero__content">
-      <span class="pill">GRAPHIC DESIGN</span>
-      <h1>Logo Designs</h1>
-      <p>Logo marks and brand icons designed for small businesses, campus products, and passion projects.</p>
-    </div>
   </header>
 
-  <div class="case-info">
-    <div class="case-info__item"><span>PIECES</span><strong>6</strong></div>
-    <div class="case-info__item"><span>CATEGORY</span><strong>Graphic Design</strong></div>
-    <div class="case-info__item"><span>FORMAT</span><strong>Marks &amp; Icons</strong></div>
-  </div>
+  <section class="graphic-category-title" aria-labelledby="logo-design-title">
+    <span class="pill">GRAPHIC DESIGN</span>
+    <h1 id="logo-design-title">Logo Designs</h1>
+  </section>
 
   <div class="case-body">
-    <p>Six logo marks spanning a rewards platform icon, an automotive parts brand (Motobizz), a burger joint (Buddy Burgers), a nature-writing brand (Nature Bulletin), and two independent marks (Kooky, PrintRad), each built around a single distinct symbol that still reads clearly at icon size.</p>
-    <p>Solving for versatility mattered most here: every mark needed to hold up in black-and-white, at small sizes, and printed on merchandise.</p>
-  </div>
-
-  <div class="case-gallery-intro">
-    <h2>The Work</h2>
-    <p>All 6 pieces from this collection.</p>
+    <p>This collection brings together logos and brand marks designed for a range of businesses, products, and projects. Every logo starts with understanding who the brand is, what it stands for, and the feeling it should leave behind, then sketching ideas until one simple concept captures it.</p>
+    <p>I build each mark as a clean vector so it stays sharp at any size, from a tiny app icon to a large banner. From there, I test it in color and black and white, and across different backgrounds, so it stays recognizable wherever it appears.</p>
   </div>
 
   <main>
     <section class="work-groups">
-      <div class="work-group">
-        <div class="work-group__grid small-grid">
-          <div class="work-item work-item--pad">
-            <div class="work-item__logo">
-              <img src="../../assets/images/work/graphic-design/logo-01-rewards-icon.png" alt="Rewards by LMFC logo icon" />
-              <p class="work-item__logo-caption">rewards<span>by LMFC</span></p>
-            </div>
-          </div>
-          <div class="work-item work-item--pad"><img src="../../assets/images/work/graphic-design/logo-02-motobizz.png" alt="Motobizz motor parts and accessories logo" /></div>
-          <div class="work-item work-item--pad"><img src="../../assets/images/work/graphic-design/logo-03-buddy-burgers.svg" alt="Buddy Burgers burger-shaped logo" /></div>
-          <div class="work-item work-item--pad"><img src="../../assets/images/work/graphic-design/logo-04-nature-bulletin.png" alt="Nature Bulletin fountain-pen leaf logo" /></div>
-          <div class="work-item work-item--pad"><img src="../../assets/images/work/graphic-design/logo-05-kooky.svg" alt="Kooky logo" /></div>
-          <div class="work-item work-item--pad"><img src="../../assets/images/work/graphic-design/logo-06-printrad.svg" alt="PrintRad logo" /></div>
+      <div class="work-group logo-stack-frame">
+        <div class="about-page__flip-tooltip" id="logoStackFlipTooltip" aria-hidden="true">Tap to Flip</div>
+        <div class="work-group__grid small-grid logo-grid">
+          <button class="work-item work-item--pad logo-card about-page__tool" type="button" aria-pressed="false">
+            <span class="about-page__tool-inner">
+              <span class="about-page__tool-face about-page__tool-face--front"><img src="../../assets/images/work/graphic-design/logo-01-rewards-icon.png" alt="Blue geometric logo mark" /><small>Tap to flip</small></span>
+              <span class="about-page__tool-face about-page__tool-face--back" aria-hidden="true"><span class="logo-card__back-content"><span class="logo-card__header"><span><h3 class="logo-card__title">Loyalty Rewards System</h3><span class="logo-card__dates">Est. 2024 <b>•</b> Redesigned 2024</span></span></span><p class="logo-card__description">The mark is a soft-cornered hexagon with a four-point sparkle cut into the center. The hexagon feels like a token or badge you collect, while the sparkle stands for the moment a reward is earned. A light-to-deep blue gradient keeps it fresh and trustworthy, and the bold lowercase “rewards” wordmark makes the brand feel friendly and easy to approach.</p></span><small>Tap to flip</small></span>
+            </span>
+          </button>
+          <button class="work-item work-item--pad logo-card logo-card--large about-page__tool" type="button" aria-pressed="false">
+            <span class="about-page__tool-inner">
+              <span class="about-page__tool-face about-page__tool-face--front"><img src="../../assets/images/work/graphic-design/logo-02-motobizz.png" alt="Motobizz motor parts and accessories logo" /><small>Tap to flip</small></span>
+              <span class="about-page__tool-face about-page__tool-face--back" aria-hidden="true"><span class="logo-card__back-content"><span class="logo-card__header"><span><h3 class="logo-card__title">Motobizz</h3><span class="logo-card__dates">Est. 2019 <b>•</b> Redesigned 2025</span></span></span><p class="logo-card__description">Sweeping lines form the silhouette of a rider leaning into a turn, capturing speed and movement in a single glance. The slanted wordmark pushes the design forward, as if it’s already in motion. Teal and deep navy give the brand an energetic yet dependable feel, right for a shop riders trust to keep them on the road.</p></span><small>Tap to flip</small></span>
+            </span>
+          </button>
+          <button class="work-item work-item--pad logo-card logo-card--large about-page__tool" type="button" aria-pressed="false">
+            <span class="about-page__tool-inner">
+              <span class="about-page__tool-face about-page__tool-face--front"><img src="../../assets/images/work/graphic-design/logo-03-buddy-burgers.svg" alt="Buddy Burgers burger-shaped logo" /><small>Tap to flip</small></span>
+              <span class="about-page__tool-face about-page__tool-face--back" aria-hidden="true"><span class="logo-card__back-content"><span class="logo-card__header"><span><h3 class="logo-card__title">Buddy Burgers</h3><span class="logo-card__dates">Est. 2026</span></span></span><p class="logo-card__description">The logo is built like a burger: a green sesame-seed bun on top, the red brand name stacked in the middle like the patty, a yellow layer of cheese, and a bottom bun to close it off. The chunky, hand-drawn lettering feels playful and casual, like grabbing a meal with friends. Its warm, appetizing colors make it instantly recognizable on packaging and signage.</p></span><small>Tap to flip</small></span>
+            </span>
+          </button>
+          <button class="work-item work-item--pad logo-card logo-card--large about-page__tool" type="button" aria-pressed="false">
+            <span class="about-page__tool-inner">
+              <span class="about-page__tool-face about-page__tool-face--front"><img src="../../assets/images/work/graphic-design/logo-04-nature-bulletin.png" alt="Nature Bulletin fountain-pen leaf logo" /><small>Tap to flip</small></span>
+              <span class="about-page__tool-face about-page__tool-face--back" aria-hidden="true"><span class="logo-card__back-content"><span class="logo-card__header"><span><h3 class="logo-card__title">Nature Bulletin</h3><span class="logo-card__dates">Est. 2024</span></span></span><p class="logo-card__description">The mark combines a fountain pen nib with two leaves sprouting from the top, showing stories that grow from caring for the environment. The pen represents journalism and the leaves represent nature, joined into one simple symbol. Olive green and charcoal keep it earthy and credible, fitting for a publication that informs and inspires action.</p></span><small>Tap to flip</small></span>
+            </span>
+          </button>
+          <button class="work-item work-item--pad logo-card about-page__tool" type="button" aria-pressed="false">
+            <span class="about-page__tool-inner">
+              <span class="about-page__tool-face about-page__tool-face--front"><img src="../../assets/images/work/graphic-design/logo-05-kooky.svg" alt="Kooky logo" /><small>Tap to flip</small></span>
+              <span class="about-page__tool-face about-page__tool-face--back" aria-hidden="true"><span class="logo-card__back-content"><span class="logo-card__header"><span><h3 class="logo-card__title">Kooky</h3><span class="logo-card__dates">Est. 2026</span></span></span><p class="logo-card__description">Rounded, bouncy letters give the wordmark a fun, homemade personality that matches the brand’s name. A dotted dome sits on top like a freshly baked cookie full of oats, adding a playful touch without extra clutter. Warm dark tones keep it cozy and inviting, like cookies straight from a neighborhood kitchen.</p></span><small>Tap to flip</small></span>
+            </span>
+          </button>
+          <button class="work-item work-item--pad logo-card about-page__tool" type="button" aria-pressed="false">
+            <span class="about-page__tool-inner">
+              <span class="about-page__tool-face about-page__tool-face--front"><img src="../../assets/images/work/graphic-design/logo-06-printrad.svg" alt="PrintRad logo" /><small>Tap to flip</small></span>
+              <span class="about-page__tool-face about-page__tool-face--back" aria-hidden="true"><span class="logo-card__back-content"><span class="logo-card__header"><span><h3 class="logo-card__title">PrintRad</h3><span class="logo-card__dates">Est. 2025</span></span></span><p class="logo-card__description">The bold circular mark works like a camera lens and doubles as the letter “P,” connecting photography and the brand name in one shape. Its thick, rounded form also suggests the rolling motion of a printer, hinting at photos coming to life on paper. The solid black and sturdy slab-serif wordmark keep it modern and confident, and easy to recognize even as a small app icon.</p></span><small>Tap to flip</small></span>
+            </span>
+          </button>
         </div>
       </div>
     </section>
 
-    <a class="work-footer" href="#">
-      <div class="work-footer__qr-wrap">
-        <img src="../../assets/images/work/graphic-design/qr-code-composited.jpg" alt="QR code" />
-        <span class="work-footer__qr-caption">Graphic Designs</span>
-      </div>
-      <h3>Scan to<br>view more</h3>
-    </a>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <script src="../../assets/js/main.js?v=20260924a"></script>
+  <script src="../../assets/js/main.js?v=20260927flip"></script>
+  <script src="../../assets/js/graphic-category-pages.js?v=20260927a"></script>
 </body>
 </html>

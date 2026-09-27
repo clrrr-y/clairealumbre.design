@@ -6,27 +6,43 @@
   <title>Others — Claire Alumbre</title>
   <meta name="description" content="Claire Alumbre — graphic design: newspaper layouts, tickets, game cards and brochures." />
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260926santino" />
+  <link rel="stylesheet" href="../../assets/css/graphic-category-pages.css?v=20260928printfilesplain2" />
   <style>
-    /* Page-specific: small caption under the footer QR code, since the
-       shared .work-footer only defines img + h3. */
-    .work-footer__qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
+    .print-materials-grid,
+    .print-materials-ticket {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .work-footer__qr-caption {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
+    .print-materials-grid {
+      column-gap: 40px;
+      row-gap: 48px;
+    }
+
+    .graphic-category-page .print-material-item:hover,
+    .graphic-category-page .print-material-item:focus-within {
+      z-index: 3;
+      transform: translateY(-8px) scale(1.04) !important;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+    }
+
+    .graphic-category-page .print-materials-ticket:hover,
+    .graphic-category-page .print-materials-ticket:focus-within {
+      transform: translateY(-8px) scale(1.04) !important;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+    }
+
+    .print-material-item--plain {
+      background: #fff;
+    }
+
+    .print-material-item--plain img {
+      clip-path: inset(0.7% 0.7% 0.7% 0.7% round 8px);
     }
   </style>
 </head>
-<body>
+<body class="graphic-category-page">
 
   <a class="back-link" href="../graphic-design.html" aria-label="Back to graphic design projects" title="Back to graphic design projects"><img src="../../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
 
@@ -44,55 +60,37 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image:url('../../assets/images/work/graphic-design/others1-06-dapig-brochure-mockup.jpg')">
+  <header class="case-hero" data-hero-images="../../assets/images/work/graphic-design/print-materials/figma/print-01-sibulan.png|../../assets/images/work/graphic-design/print-materials/figma/print-02-tubigon.png|../../assets/images/work/graphic-design/print-materials/figma/print-03-cas.jpeg|../../assets/images/work/graphic-design/print-materials/figma/print-04-dapig.jpeg|../../assets/images/work/graphic-design/print-materials/figma/print-05-weekly-mayor.jpeg|../../assets/images/work/graphic-design/print-materials/figma/print-06-weekly-forum.png|../../assets/images/work/graphic-design/print-materials/figma/print-07-ticket.jpeg">
+    <div class="case-hero__media is-active" data-hero-slide="0"></div>
+    <div class="case-hero__media" data-hero-slide="1"></div>
     <div class="case-hero__scrim"></div>
-    <div class="case-hero__content">
-      <span class="pill">GRAPHIC DESIGN</span>
-      <h1>Others</h1>
-      <p>Newspaper layouts, event tickets, game cards, and brochures rounding out the catalog of print work.</p>
-    </div>
   </header>
 
-  <div class="case-info">
-    <div class="case-info__item"><span>PIECES</span><strong>9</strong></div>
-    <div class="case-info__item"><span>CATEGORY</span><strong>Graphic Design</strong></div>
-    <div class="case-info__item"><span>FORMAT</span><strong>Print &amp; Editorial</strong></div>
-  </div>
+  <section class="graphic-category-title" aria-labelledby="print-materials-title">
+    <span class="pill">GRAPHIC DESIGN</span>
+    <h1 id="print-materials-title">Print Materials</h1>
+  </section>
 
   <div class="case-body">
     <p>The rest of the graphic design catalog: a Weekly Sillimanian newspaper front page, Intramurals and Kibalag bingo cards, event tickets, an anniversary masthead banner, and trifold brochures for Dapig, the College of Arts and Sciences, Suroy Ta Sa Sibulan, and Tubigon and Malabatas.</p>
     <p>These pieces cover longer-form layout work, like multi-panel brochures and a full newspaper page, alongside smaller print ephemera such as tickets and game cards.</p>
   </div>
 
-  <div class="case-gallery-intro">
-    <h2>The Work</h2>
-    <p>All 9 pieces from this collection.</p>
-  </div>
-
   <main>
     <section class="work-groups">
       <div class="work-group">
-        <div class="work-group__grid">
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/others1-01-weekly-sillimanian-mayor-newspaper.jpg" alt="The Weekly Sillimanian front page: Mayor's appointment to SU BOT draws flak" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/others1-02-intramurals-bingo-card.jpg" alt="Intramurals bingo game card" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/others1-03-kibalag-bingo-card.jpg" alt="Kibalag bingo game card" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/others1-04-talentadong-maskomista-ticket.jpg" alt="Talentadong Maskomista event ticket design" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/others1-05-weekly-sillimanian-banner.jpg" alt="The Weekly Sillimanian 101st anniversary masthead banner" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/others1-06-dapig-brochure-mockup.jpg" alt="Dapig trifold brochure mockup" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/others1-07-cas-trifold-brochure-mockup.jpg" alt="College of Arts and Sciences trifold brochure mockup" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/others2-03-sibulan-travel-brochure-mockup.jpg" alt="Suroy Ta Sa Sibulan travel brochure mockup" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/others2-04-tubigon-malabatas-brochure-mockup.jpg" alt="Tubigon and Malabatas nature brochure mockup, open spread" /></div>
+        <div class="work-group__grid print-materials-grid">
+          <div class="work-item print-material-item print-material-item--landscape"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-01-sibulan.png" alt="Suroy Ta Sa Sibulan travel brochure mockup" /></div>
+          <div class="work-item print-material-item print-material-item--landscape"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-02-tubigon.png" alt="Tubigon and Malabatas nature brochure mockup, open spread" /></div>
+          <div class="work-item print-material-item print-material-item--landscape"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-03-cas.jpeg" alt="College of Arts and Sciences brochure mockup" /></div>
+          <div class="work-item print-material-item print-material-item--landscape"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-04-dapig.jpeg" alt="Dapig brochure mockup" /></div>
+          <div class="work-item print-material-item print-material-item--portrait"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-05-weekly-mayor.jpeg" alt="The Weekly Sillimanian newspaper front page about the mayor's appointment" /></div>
+          <div class="work-item print-material-item print-material-item--portrait print-material-item--plain"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-06-weekly-forum-plain.png?v=20260928plain2" alt="The Weekly Sillimanian newspaper forum feature page" /></div>
         </div>
+        <div class="print-materials-ticket"><img src="../../assets/images/work/graphic-design/print-materials/figma/print-07-ticket.jpeg" alt="Talentadong Maskomista event ticket design" /></div>
       </div>
     </section>
 
-    <a class="work-footer" href="#">
-      <div class="work-footer__qr-wrap">
-        <img src="../../assets/images/work/graphic-design/qr-code-composited.jpg" alt="QR code" />
-        <span class="work-footer__qr-caption">Graphic Designs</span>
-      </div>
-      <h3>Scan to<br>view more</h3>
-    </a>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -100,5 +98,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <script src="../../assets/js/main.js?v=20260924a"></script>
+  <script src="../../assets/js/graphic-category-pages.js?v=20260927a"></script>
 </body>
 </html>

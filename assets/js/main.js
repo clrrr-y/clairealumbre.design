@@ -428,8 +428,8 @@ if (hasGSAP && window.ScrollTrigger) {
 // ---------------------------------------------------------------------------
 (function () {
   const tools = Array.from(document.querySelectorAll('.about-page__tool'));
-  const techStack = document.querySelector('.about-page__tech-stack-frame');
-  const tooltip = document.getElementById('techStackFlipTooltip');
+  const techStack = document.querySelector('.about-page__tech-stack-frame, .logo-stack-frame');
+  const tooltip = document.getElementById('techStackFlipTooltip') || document.getElementById('logoStackFlipTooltip');
   if (!tools.length) return;
 
   if (techStack && tooltip) {

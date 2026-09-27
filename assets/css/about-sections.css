@@ -132,6 +132,7 @@ body.about-page #details .about-page__detail-section--tech {
 
 body.about-page #details #tech-stack.about-page__tech-stack-frame {
   position: relative;
+  margin-top: 0 !important;
   padding: 28px;
 }
 

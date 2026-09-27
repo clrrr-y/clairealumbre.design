@@ -3,37 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Social Media Publications — Claire Alumbre</title>
-  <meta name="description" content="Claire Alumbre — social media publication design: event posters, campaign graphics and social cards." />
+  <title>Social Media — Claire Alumbre</title>
+  <meta name="description" content="Claire Alumbre — social media design: event posters, campaign graphics and social cards." />
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260926santino" />
   <style>
-    /* Page-specific: small caption under the footer QR code, since the
-       shared .work-footer only defines img + h3. */
-    .work-footer__qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
+    .social-media-page .work-groups {
+      max-width: 1403px;
+      padding: 40px 40px 120px;
+      gap: 30px;
     }
 
-    .work-footer__qr-caption {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
+    .social-media-page .case-body {
+      padding-top: 24px;
+    }
+
+    .social-media-page .case-hero {
+      background: #171717;
+    }
+
+    .social-media-page .case-hero__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 700ms ease;
+    }
+
+    .social-media-page .case-hero__media.is-active {
+      opacity: 1;
+    }
+
+    .social-media-page .social-media-title {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 40px 0;
+      text-align: center;
+    }
+
+    .social-media-page .social-media-title .pill {
+      border-color: rgba(0, 0, 0, 0.16);
+      color: var(--ink);
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    .social-media-page .social-media-title h1 {
+      margin: 16px 0 0;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .social-media-grid {
+      display: grid;
+      width: 100%;
+    }
+
+    .social-media-grid--portraits {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .social-media-row {
+      display: grid;
+      width: 100%;
+      align-items: start;
+    }
+
+    .social-media-row--one {
+      grid-template-columns: 323.33px 303.78px 303.44px 288.35px;
+      gap: 34.76px;
+    }
+
+    .social-media-row--two {
+      grid-template-columns: 302.97px 303.78px 286.92px 272.675px;
+      gap: 49.337px;
+    }
+
+    .social-media-grid--squares {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px 40px;
+    }
+
+    .social-media-grid--closing {
+      grid-template-columns: 262.027px 262.027px minmax(0, 700.093px);
+      gap: 50px;
+      align-items: center;
+    }
+
+    .social-media-page .work-item {
+      position: relative;
+      min-width: 0;
+      aspect-ratio: auto;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #eee;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      transform: translateZ(0);
+      transition: transform 320ms cubic-bezier(.22, 1, .36, 1), box-shadow 320ms cubic-bezier(.22, 1, .36, 1);
+      will-change: transform;
+    }
+
+    @media (hover: hover) {
+      .social-media-page .work-item:hover,
+      .social-media-page .work-item:focus-within {
+        z-index: 2;
+        transform: translateY(-8px) scale(1.04);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .social-media-page .work-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .social-media-page .work-item--wide { aspect-ratio: auto; }
+
+    .social-media-page .work-item--wide img {
+      width: 100%;
+      max-width: none;
+      max-height: none;
+    }
+
+    @media (max-width: 900px) {
+      .social-media-row--one,
+      .social-media-row--two,
+      .social-media-grid--squares { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .social-media-grid--closing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .social-media-grid--closing .work-item--wide { grid-column: 1 / -1; }
+    }
+
+    @media (min-width: 901px) and (max-width: 1402px) {
+      .social-media-row--one { grid-template-columns: 1.065fr 1fr 0.999fr 0.949fr; }
+      .social-media-row--two { grid-template-columns: 1fr 1fr 0.944fr 0.897fr; }
+    }
+
+    @media (max-width: 560px) {
+      .social-media-page .work-groups { padding-inline: 20px; }
+      .social-media-row--one,
+      .social-media-row--two,
+      .social-media-grid--squares,
+      .social-media-grid--closing { grid-template-columns: 1fr; gap: 22px; }
+      .social-media-grid--closing .work-item--wide { grid-column: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .social-media-page .case-hero__media {
+        transition: none;
+      }
+
+      .social-media-page .work-item {
+        transition: none;
+        will-change: auto;
+      }
     }
   </style>
 </head>
-<body>
-
+<body class="social-media-page">
   <a class="back-link" href="../graphic-design.html" aria-label="Back to graphic design projects" title="Back to graphic design projects"><img src="../../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
 
   <nav class="nav" id="nav">
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <div class="nav__right">
       <ul class="nav__links">
         <li><a href="../../index.html#home" class="is-active">HOME</a></li>
@@ -44,72 +181,86 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image:url('../../assets/images/work/graphic-design/social-18-the-crown-awaits-pageant-poster.jpg')">
+  <header class="case-hero" aria-label="Featured social media work">
+    <div class="case-hero__media is-active" data-hero-slide="0" style="background-image:url('../../assets/images/work/graphic-design/figma-social/figma-social-18.jpg')"></div>
+    <div class="case-hero__media" data-hero-slide="1"></div>
     <div class="case-hero__scrim"></div>
-    <div class="case-hero__content">
-      <span class="pill">GRAPHIC DESIGN</span>
-      <h1>Social Media Publications</h1>
-      <p>Event posters, holiday greetings, and campaign graphics designed for quick, scroll-stopping visibility.</p>
-    </div>
   </header>
 
-  <div class="case-info">
-    <div class="case-info__item"><span>PIECES</span><strong>20</strong></div>
-    <div class="case-info__item"><span>CATEGORY</span><strong>Graphic Design</strong></div>
-    <div class="case-info__item"><span>FORMAT</span><strong>Posters &amp; Social Cards</strong></div>
-  </div>
+  <section class="social-media-title" aria-labelledby="social-media-title">
+    <span class="pill">GRAPHIC DESIGN</span>
+    <h1 id="social-media-title">Social Media</h1>
+  </section>
 
   <div class="case-body">
-    <p>This collection gathers the social posts, event posters, and campaign graphics made for Asbir Tech, The Weekly Sillimanian, and various campus organizations and events at Silliman University — from pageant promos and podcast covers to seasonal greetings and tournament announcements.</p>
-    <p>Each piece is built to work first as a small, fast-scrolling image: bold typography, high-contrast color, and a single clear focal point, adapted across square and portrait formats for different platforms.</p>
-  </div>
-
-  <div class="case-gallery-intro">
-    <h2>The Work</h2>
-    <p>All 20 pieces from this collection.</p>
+    <p>This collection brings together social posts, event posters, and campaign graphics, from pageant promos and podcast covers to seasonal greetings and tournament announcements. Every project starts with understanding the message and the audience, then finding the one visual idea that says it best.</p>
+    <p>I design each piece to work first as a small, fast-scrolling image, using bold typography, high-contrast color, and a single clear focal point. From there, I adapt it across square and portrait formats so it looks just as strong on every platform.</p>
   </div>
 
   <main>
-    <section class="work-groups">
-      <div class="work-group">
-        <div class="work-group__grid">
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-01-talentadong-maskomista-mic-poster.jpg" alt="Talentadong Maskomista event poster with a vintage microphone" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-02-asbir-tech-merry-christmas.jpg" alt="Asbir Tech Merry Christmas greeting poster" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-03-ccd-raptors-overall-champion.jpg" alt="CCD Raptors overall champion poster with dragon mascot" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-04-talentadong-maskomista-performers.jpg" alt="Talentadong Maskomista poster featuring competition performers" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-05-guardian-of-the-gate-motorcycles.jpg" alt="Guardian of the Gate of Motorcycles poster" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-06-for-another-day-portrait.jpg" alt="For Another Day documentary photo poster" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-07-asbir-tech-happy-new-year-2026.jpg" alt="Asbir Tech Happy New Year 2026 poster with fireworks" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-08-free-spin-comic-poster.jpg" alt="Free Spin comic-style promotional poster" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-09-guts-and-glory-podcast-cover.jpg" alt="Guts and Glory podcast cover art" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-10-betzee-play-app-mockup.jpg" alt="Betzee Play mobile app promotional mockup" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-11-asbir-tech-company-profile.jpg" alt="Asbir Tech company profile social slide" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-12-asbir-tech-ceo-quote-graphic.jpg" alt="Asbir Tech CEO quote graphic" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-13-weekly-sillimanian-121-years.jpg" alt="The Weekly Sillimanian 121 years anniversary graphic" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-14-weekly-sillimanian-mayor-mockup.jpg" alt="The Weekly Sillimanian newspaper clipping mockup" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-15-miss-silliman-quote-card.jpg" alt="Miss Silliman pageant candidate quote card" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-16-asbir-tech-halloween-post.jpg" alt="Asbir Tech Halloween-themed social post" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-17-youre-still-the-one-podcast-cover.jpg" alt="You're Still the One podcast episode cover" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-18-the-crown-awaits-pageant-poster.jpg" alt="The Crown Awaits pageant poster with a gold crown" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-19-national-cat-day-poster.jpg" alt="National Cat Day celebration poster" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/social-20-buglasan-festival-2024-poster.jpg" alt="Buglasan Festival 2024 culture and community poster" /></div>
+    <section class="work-groups" aria-label="Social media publication gallery">
+      <div class="social-media-grid social-media-grid--portraits">
+        <div class="social-media-row social-media-row--one">
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-01.jpg" alt="Social media poster featuring a vintage microphone" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-02.jpg" alt="Christmas social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-03.jpg" alt="Intramurals social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-04.jpg" alt="Event performers social media publication" /></div>
+        </div>
+        <div class="social-media-row social-media-row--two">
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-05.jpg" alt="Motorcycle event social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-06.jpg" alt="For Another Day portrait poster" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-07.jpg" alt="New Year social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-08.jpg" alt="Free Spin promotional poster" /></div>
         </div>
       </div>
-    </section>
 
-    <a class="work-footer" href="#">
-      <div class="work-footer__qr-wrap">
-        <img src="../../assets/images/work/graphic-design/qr-code-composited.jpg" alt="QR code" />
-        <span class="work-footer__qr-caption">Graphic Designs</span>
+      <div class="social-media-grid social-media-grid--squares">
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-09.jpg" alt="Square social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-10.jpg" alt="Betzee Play social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-11.jpg" alt="Asbir Tech social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-12.jpg" alt="Square company profile publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-13.jpg" alt="121 years anniversary publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-14.jpg" alt="Newspaper mockup publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-15.jpg" alt="Miss Silliman quote card publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-16.jpg" alt="Company profile publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-17.jpg" alt="Sports update publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-18.jpg" alt="The Crown Awaits pageant publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-19.jpg" alt="National Cat Day publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-20.jpg" alt="Talentadong Maskomista publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-21.jpg" alt="Event publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-22.jpg" alt="Square social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-23.jpg" alt="Square social media publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-24.jpg" alt="Buglasan Festival publication" /></div>
       </div>
-      <h3>Scan to<br>view more</h3>
-    </a>
+
+      <div class="social-media-grid social-media-grid--closing">
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-25.jpg" alt="Bingo card publication" /></div>
+        <div class="work-item"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-26.jpg" alt="Bingo card publication" /></div>
+        <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/figma-social/figma-social-27.jpg" alt="Wide social media cover image" /></div>
+      </div>
+    </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <script src="../../assets/js/main.js?v=20260924a"></script>
+  <script>
+    (() => {
+      const slides = Array.from({ length: 27 }, (_, index) => `../../assets/images/work/graphic-design/figma-social/figma-social-${String(index + 1).padStart(2, '0')}.jpg`);
+      const layers = Array.from(document.querySelectorAll('[data-hero-slide]'));
+      if (layers.length < 2) return;
+
+      let current = 0;
+      let activeLayer = 0;
+      window.setInterval(() => {
+        current = (current + 1) % slides.length;
+        const nextLayer = activeLayer === 0 ? 1 : 0;
+        layers[nextLayer].style.backgroundImage = `url('${slides[current]}')`;
+        layers[nextLayer].classList.add('is-active');
+        layers[activeLayer].classList.remove('is-active');
+        activeLayer = nextLayer;
+      }, 3000);
+    })();
+  </script>
 </body>
 </html>

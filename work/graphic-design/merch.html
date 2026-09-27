@@ -6,27 +6,47 @@
   <title>Merch Designs — Claire Alumbre</title>
   <meta name="description" content="Claire Alumbre — merch design: jersey, lanyard and apparel mockups." />
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260926santino" />
+  <link rel="stylesheet" href="../../assets/css/graphic-category-pages.css?v=20260928cardhover6" />
   <style>
-    /* Page-specific: small caption under the footer QR code, since the
-       shared .work-footer only defines img + h3. */
-    .work-footer__qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
+    .merch-grid .merch-item {
+      position: relative;
+      min-width: 0;
+      transform: translateZ(0);
+      transition: transform 320ms cubic-bezier(.22, 1, .36, 1), box-shadow 320ms cubic-bezier(.22, 1, .36, 1);
+      will-change: transform;
     }
 
-    .work-footer__qr-caption {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
+    .merch-grid {
+      width: min(100%, 960px);
+      margin-inline: auto;
+      column-gap: 40px;
+      row-gap: 48px;
+    }
+
+    .merch-grid .merch-item--lanyard {
+      width: min(100%, 900px);
+      justify-self: center;
+    }
+
+    .merch-grid .merch-item:hover,
+    .merch-grid .merch-item:focus-within {
+      z-index: 3;
+      transform: translateY(-14px) scale(1.08) !important;
+      box-shadow: 0 26px 52px rgba(0, 0, 0, 0.22);
+    }
+
+    .merch-grid .merch-item--lanyard:hover,
+    .merch-grid .merch-item--lanyard:focus-within {
+      transform: translateY(-8px) scale(1.03) !important;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .merch-grid .merch-item { transition: none; }
     }
   </style>
 </head>
-<body>
+<body class="graphic-category-page">
 
   <a class="back-link" href="../graphic-design.html" aria-label="Back to graphic design projects" title="Back to graphic design projects"><img src="../../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
 
@@ -44,49 +64,33 @@
     </div>
   </nav>
 
-  <header class="case-hero" style="background-image:url('../../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg')">
+  <header class="case-hero" data-hero-images="../../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg|../../assets/images/work/graphic-design/merch-02-kmc-lanyard-mockup.jpg|../../assets/images/work/graphic-design/merch-03-buddy-burgers-tshirt-mockup.jpg?v=20260927shirt">
+    <div class="case-hero__media is-active" data-hero-slide="0"></div>
+    <div class="case-hero__media" data-hero-slide="1"></div>
     <div class="case-hero__scrim"></div>
-    <div class="case-hero__content">
-      <span class="pill">GRAPHIC DESIGN</span>
-      <h1>Merch Designs</h1>
-      <p>Jersey, lanyard, and apparel mockups that carry a brand's identity onto physical products.</p>
-    </div>
   </header>
 
-  <div class="case-info">
-    <div class="case-info__item"><span>PIECES</span><strong>3</strong></div>
-    <div class="case-info__item"><span>CATEGORY</span><strong>Graphic Design</strong></div>
-    <div class="case-info__item"><span>FORMAT</span><strong>Apparel &amp; Signage</strong></div>
-  </div>
+  <section class="graphic-category-title" aria-labelledby="merch-design-title">
+    <span class="pill">GRAPHIC DESIGN</span>
+    <h1 id="merch-design-title">Merch Designs</h1>
+  </section>
 
   <div class="case-body">
-    <p>A small set of merchandise design work: a full jersey kit for Chikracha, lanyard and ID holder branding for KMC, and a t-shirt mockup for Buddy Burgers, showing how a logo and color system translate onto printed and stitched goods.</p>
-    <p>Each mockup was built to show how the design reads at true scale and in context, not just as flat artwork.</p>
-  </div>
-
-  <div class="case-gallery-intro">
-    <h2>The Work</h2>
-    <p>All 3 pieces from this collection.</p>
+    <p>This collection brings together merchandise designs for apparel and everyday items. Every piece starts with understanding the brand or community behind it, then turning its identity into artwork people feel proud to wear and share.</p>
+    <p>I design with the final product in mind, adjusting size, placement, and color so each design prints cleanly and looks good on fabric, not just on screen. Bold shapes and limited color palettes keep every piece striking and practical to produce.</p>
   </div>
 
   <main>
     <section class="work-groups">
       <div class="work-group">
-        <div class="work-group__grid">
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg" alt="Chikracha sports jersey design mockup, front and back" /></div>
-          <div class="work-item work-item--wide"><img src="../../assets/images/work/graphic-design/merch-02-kmc-lanyard-mockup.jpg" alt="KMC lanyard and ID holder branding mockups" /></div>
-          <div class="work-item"><img src="../../assets/images/work/graphic-design/merch-03-buddy-burgers-tshirt-mockup.jpg" alt="Buddy Burgers logo printed on a t-shirt mockup" /></div>
+        <div class="work-group__grid merch-grid">
+          <div class="work-item merch-item"><img src="../../assets/images/work/graphic-design/merch-01-chikracha-jersey-mockup.jpg" alt="Chikracha sports jersey design mockup, front and back" /></div>
+          <div class="work-item merch-item"><img src="../../assets/images/work/graphic-design/merch-03-buddy-burgers-tshirt-mockup.jpg?v=20260927shirt" alt="Buddy Burgers logo printed on a t-shirt mockup" /></div>
+          <div class="work-item merch-item merch-item--lanyard"><img src="../../assets/images/work/graphic-design/merch-02-kmc-lanyard-mockup.jpg" alt="KMC lanyard and ID holder branding mockups" /></div>
         </div>
       </div>
     </section>
 
-    <a class="work-footer" href="#">
-      <div class="work-footer__qr-wrap">
-        <img src="../../assets/images/work/graphic-design/qr-code-composited.jpg" alt="QR code" />
-        <span class="work-footer__qr-caption">Graphic Designs</span>
-      </div>
-      <h3>Scan to<br>view more</h3>
-    </a>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -94,5 +98,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <script src="../../assets/js/main.js?v=20260924a"></script>
+  <script src="../../assets/js/graphic-category-pages.js?v=20260927a"></script>
 </body>
 </html>
