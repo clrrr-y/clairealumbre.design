@@ -3,87 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photographs — Claire Alumbre</title>
+  <title>Photography & Photo Editing — Claire Alumbre</title>
+  <meta name="description" content="Claire Alumbre — photography and photo editing across sports, events, portraits, and landscapes." />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260926santino" />
+  <style>
+    .photo-page .work-header { width: min(1200px, calc(100% - 96px)); margin-inline: auto; padding: 150px 0 0; text-align: left; }
+    .photo-page .work-header h1 { line-height: .98; }
+    .photo-page .photo-intro { width: min(1200px, calc(100% - 96px)); margin: 0 auto; padding: 18px 0 34px; }
+    .photo-page .photo-intro p { max-width: 780px; margin: 0; color: var(--ink-soft); font-size: 18px; line-height: 1.65; }
+    .photo-page .photo-intro__link { margin-top: 28px !important; }
+    .photo-page .photo-intro__link a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .photo-page .photo-gallery { width: min(1200px, calc(100% - 96px)); margin: 0 auto; padding-bottom: 120px; }
+    .photo-page .photo-category { margin-top: 54px; }
+    .photo-page .photo-category:first-child { margin-top: 0; }
+    .photo-page .photo-category__heading { margin: 0 0 18px; border-bottom: 1px solid rgba(0, 0, 0, 0.12); padding-bottom: 12px; }
+    .photo-page .photo-category__heading h2 { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 400; line-height: 1; }
+    .photo-page .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; grid-auto-rows: auto; gap: 20px; }
+    .photo-page .photo-grid .work-item { min-height: 0; aspect-ratio: auto !important; }
+    .photo-page .photo-grid .work-item img { display: block; width: 100%; height: auto !important; object-fit: contain; }
+    .photo-page .photo-grid--events .work-item { aspect-ratio: 403.4 / 227 !important; }
+    .photo-page .photo-grid--events .work-item img { width: 100%; height: 100% !important; object-fit: cover; }
+    .photo-page .photo-grid--events .event-crop--top img { height: 118.58% !important; object-position: top; }
+    .photo-page .photo-grid--events .event-crop--zoom img { width: 115.14%; height: 136.56% !important; max-width: none; transform: translate(-7.22%, -28.55%); }
+    @media (max-width: 760px) {
+      .photo-page .work-header { width: min(100% - 40px, 600px); padding-top: 118px; }
+      .photo-page .photo-intro { width: min(100% - 40px, 600px); padding: 16px 0 24px; }
+      .photo-page .photo-intro p { font-size: 16px; }
+      .photo-page .photo-gallery { width: min(100% - 40px, 600px); }
+      .photo-page .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    }
+    @media (max-width: 460px) { .photo-page .photo-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
-<body>
-
+<body class="photo-page">
   <a class="back-link" href="../index.html#projects" aria-label="Back to portfolio" title="Back to portfolio"><img src="../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
-
   <nav class="nav" id="nav">
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <div class="nav__right">
-      <ul class="nav__links">
-        <li><a href="../index.html#home" class="is-active">HOME</a></li>
-        <li><a href="../index.html#about">ABOUT</a></li>
-        <li><a href="../index.html#projects">PROJECTS</a></li>
-      </ul>
+      <ul class="nav__links"><li><a href="../index.html#home" class="is-active">HOME</a></li><li><a href="../index.html#about">ABOUT</a></li><li><a href="../index.html#projects">PROJECTS</a></li></ul>
       <a href="../index.html#contact" class="nav__cta">CONTACT</a>
     </div>
   </nav>
 
-  <header class="work-header">
-    <p class="work-header__eyebrow">MY WORK</p>
-    <h1>Photographs</h1>
-  </header>
+  <header class="work-header"><h1>Photography &amp; Photo Editing</h1></header>
 
   <main>
-    <div class="container">
-      <div class="section-intro">
-        <p class="section-intro__desc">Four collections — sports, portraits, events, and landscapes and buildings. Scroll through, or click straight into one.</p>
-      </div>
+    <div class="photo-intro">
+      <p>Moments captured and carefully edited, organized by subject: sports, events, portraits, and landscapes and buildings.</p>
+      <p class="photo-intro__link">View more: <a href="https://tinyurl.com/cyjaphotography" target="_blank" rel="noopener noreferrer">https://tinyurl.com/cyjaphotography</a></p>
     </div>
+    <div class="photo-gallery">
+      <section class="photo-category" aria-labelledby="sports-heading">
+        <div class="photo-category__heading"><h2 id="sports-heading">Sports</h2></div>
+        <div class="photo-grid">
+          <div class="work-item"><img src="../assets/images/work/photography/sports-volleyball-block.jpg" alt="Volleyball players blocking at the net under stage lighting" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-badminton-dive.jpg" alt="Badminton player diving to return a shot on a teal court" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-team-celebration.jpg" alt="Sports team celebrating and high-fiving after a match" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-softball-play.jpg" alt="Softball catcher and batter mid-play on a sunny field" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-juggling-oranges.jpg" alt="Group juggling and tossing oranges outdoors" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-basketball-oneonone.jpg" alt="Two basketball players competing for the ball on an outdoor court" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-runner-legs.jpg" alt="Close-up of a runner's legs and shoes casting a shadow" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-team-huddle.jpg" alt="Team members joining hands together in a huddle" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/sports-agility-drill.jpg" alt="Row of athletes' legs running an agility ladder drill" /></div>
+        </div>
+      </section>
 
-    <div class="stack">
-      <a class="stack-card" href="photography/sports.html" style="background-image:url('../assets/images/work/photography/sports-volleyball-block.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">PHOTOGRAPHY</span>
-          <h3>Sports</h3>
-          <p>Action shots from volleyball, basketball, softball, and track, caught mid-motion on campus courts and fields.</p>
-        </span>
-      </a>
-      <a class="stack-card" href="photography/portraits.html" style="background-image:url('../assets/images/work/photography/portrait-singer-stage-smoke.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">PHOTOGRAPHY</span>
-          <h3>Portraits</h3>
-          <p>Close-up portraits of singers, performers, and graduates, on stage and out in the open.</p>
-        </span>
-      </a>
-      <a class="stack-card" href="photography/events.html" style="background-image:url('../assets/images/work/photography/event-dancer-white-dress.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">PHOTOGRAPHY</span>
-          <h3>Events</h3>
-          <p>Stage performances, festivals, and candid moments from live events and celebrations.</p>
-        </span>
-      </a>
-      <a class="stack-card" href="photography/landscapes.html" style="background-image:url('../assets/images/work/photography/landscape-heritage-building.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">PHOTOGRAPHY</span>
-          <h3>Landscape and Buildings</h3>
-          <p>Interiors and exteriors — stairwells, libraries, hallways, and heritage buildings around campus.</p>
-        </span>
-      </a>
+      <section class="photo-category" aria-labelledby="events-heading">
+        <div class="photo-category__heading"><h2 id="events-heading">Events</h2></div>
+        <div class="photo-grid photo-grid--events">
+          <div class="work-item event-crop--top"><img src="../assets/images/work/photography/events/figma/event-04.jpeg?v=20260928figma2" alt="Man singing on stage under blue and purple lighting" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/events/figma/event-05.jpeg?v=20260928figma2" alt="Woman performing in a flowing white dress under blue stage lighting" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/events/figma/event-06.jpeg?v=20260928figma2" alt="Woman singing in a flowing white gown on a dark stage" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/events/figma/event-07.jpeg?v=20260928figma2" alt="Man singing on stage under red and green lights" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/events/figma/event-08.jpeg?v=20260928figma2" alt="Black and white photo of a performer singing to a crowd" /></div>
+          <div class="work-item event-crop--zoom"><img src="../assets/images/work/photography/events/figma/event-09.jpeg?v=20260928figma2" alt="Costumed performer on a colorful stage" /></div>
+          <div class="work-item event-crop--top"><img src="../assets/images/work/photography/events/figma/event-03.jpeg?v=20260928figma2" alt="People gathered around a drink booth at an event" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/events/figma/event-01.jpeg?v=20260928figma2" alt="Seated performer on stage with a child" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/events/figma/event-02.jpeg?v=20260928figma2" alt="Woman singing under green stage lighting" /></div>
+        </div>
+      </section>
+
+      <section class="photo-category" aria-labelledby="portraits-heading">
+        <div class="photo-category__heading"><h2 id="portraits-heading">Portraits</h2></div>
+        <div class="photo-grid">
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-singer-stage-smoke.jpg" alt="Male singer performing on stage with smoke and colored lights" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-performer-blue-gown.jpg" alt="Performer in a blue sequined stage outfit singing" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-singer-blackwhite.jpg" alt="Black and white portrait of a man singing into a microphone" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-singer-floral-top.jpg" alt="Woman singing emotionally into a microphone, wearing a floral top" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-graduate-outdoor.jpg" alt="Woman in a graduation gown smiling outdoors" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-motorcycle-rider.jpg" alt="Person in a motorcycle helmet and jacket seated on a motorbike" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-mermaid-costume.jpg" alt="Young girl in a mermaid tail costume posing on rocks by the sea" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/portrait-graduate-red-sash.jpg" alt="Woman in a graduation gown with a red sash, outdoor portrait" /></div>
+        </div>
+      </section>
+
+      <section class="photo-category" aria-labelledby="landscapes-heading">
+        <div class="photo-category__heading"><h2 id="landscapes-heading">Landscape &amp; Buildings</h2></div>
+        <div class="photo-grid">
+          <div class="work-item"><img src="../assets/images/work/photography/landscape-hallway-corridor.jpg" alt="Dim hallway corridor with patterned floor tiles" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/landscape-stairwell-sunlight.jpg" alt="Stairwell interior lit by sunlight through a window" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/landscape-heritage-building.jpg" alt="Heritage building exterior with palm trees under a blue sky" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/landscape-garden-hut.jpg" alt="Small garden hut surrounded by trees" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/landscape-graffiti-room.jpg" alt="Interior room with graffiti wall art and tables" /></div>
+          <div class="work-item"><img src="../assets/images/work/photography/landscape-library-interior.jpg" alt="Library interior with wooden tables and warm ceiling lighting" /></div>
+        </div>
+      </section>
     </div>
-
-    <a class="work-footer glass-card" href="#">
-      <div>
-        <img src="../assets/images/work/photography/qr-code.png" alt="QR code" />
-        <p style="text-align:center; margin-top:8px;">PHOTOGRAPHS</p>
-      </div>
-      <h3>SCAN TO VIEW MORE</h3>
-    </a>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <script src="../assets/js/main.js?v=20260924a"></script>
-<script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/insights/script.js"></script></body>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
 </html>

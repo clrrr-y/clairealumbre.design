@@ -137,6 +137,16 @@
 }
 
 @media (max-width: 760px) {
+  .graphic-category-page .work-group__grid.logo-grid {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .graphic-category-page .work-group__grid.merch-grid {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
   .graphic-category-page .work-group__grid.print-materials-grid {
     grid-template-columns: 1fr;
   }

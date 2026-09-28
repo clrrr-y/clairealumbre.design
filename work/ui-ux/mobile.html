@@ -6,8 +6,36 @@
   <title>Mobile — Claire Alumbre</title>
   <meta name="description" content="Claire Alumbre — freelance graphic designer, photographer, video editor and UI/UX designer." />
   <link rel="stylesheet" href="../../assets/css/style.css?v=20260926santino" />
+  <style>
+    /* Keep the multi-screen composites intact on narrow screens. */
+    @media (max-width: 780px) {
+      body.uiux-mobile-page .work-groups {
+        padding: 28px 16px 80px;
+      }
+
+      body.uiux-mobile-page .work-group__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      body.uiux-mobile-page .work-item--wide.work-item--pad {
+        aspect-ratio: auto;
+        min-height: 0;
+        padding: 12px;
+      }
+
+      body.uiux-mobile-page .work-item--wide.work-item--pad img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: none;
+        object-fit: contain;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="uiux-mobile-page">
 
   <a class="back-link" href="../ui-ux.html" aria-label="Back to UI/UX projects" title="Back to UI/UX projects"><img src="../../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
 

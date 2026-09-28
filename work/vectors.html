@@ -4,86 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vector Art — Claire Alumbre</title>
+  <meta name="description" content="Claire Alumbre — vector art across individual portraits, family illustrations, and pet artwork." />
   <link rel="stylesheet" href="../assets/css/style.css?v=20260926santino" />
+  <style>
+    .vector-page .work-header { width: min(1200px, calc(100% - 96px)); margin-inline: auto; padding: 150px 0 0; text-align: left; }
+    .vector-page .work-header h1 { line-height: .98; }
+    .vector-page .vector-intro { width: min(1200px, calc(100% - 96px)); margin: 0 auto; padding: 18px 0 34px; }
+    .vector-page .vector-intro p { max-width: 780px; margin: 0; color: var(--ink-soft); font-size: 18px; line-height: 1.65; }
+    .vector-page .vector-intro__link { margin-top: 28px !important; }
+    .vector-page .vector-intro__link a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .vector-page .vector-gallery { width: min(1200px, calc(100% - 96px)); margin: 0 auto; padding-bottom: 120px; }
+    .vector-page .vector-category { margin-top: 54px; }
+    .vector-page .vector-category:first-child { margin-top: 0; }
+    .vector-page .vector-category__heading { margin: 0 0 18px; border-bottom: 1px solid rgba(0, 0, 0, 0.12); padding-bottom: 12px; }
+    .vector-page .vector-category__heading h2 { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: clamp(30px, 4vw, 48px); font-weight: 400; line-height: 1; }
+    .vector-page .vector-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; grid-auto-rows: auto; gap: 32px 24px; }
+    .vector-page .vector-grid .work-item { min-height: 0; aspect-ratio: auto !important; position: relative; transform: translateZ(0); transition: transform 320ms cubic-bezier(.2, 1.55, .45, 1), box-shadow 320ms cubic-bezier(.22, 1, .36, 1); will-change: transform; }
+    .vector-page .vector-grid .work-item img { display: block; width: 100%; height: auto !important; object-fit: contain; }
+    .vector-page .vector-grid--family { grid-template-columns: repeat(3, minmax(0, 349.289px)); row-gap: 36px; column-gap: 26.066px; }
+    .vector-page .vector-grid--family .work-item { aspect-ratio: 1 !important; border-radius: 9.201px; box-shadow: 0 4.603px 4.603px rgba(0, 0, 0, .25); }
+    .vector-page .vector-grid--family .work-item img { width: 100%; height: 100% !important; object-fit: cover; }
+    .vector-page .vector-grid--family .family-crop--nathalie img { width: 133.46%; max-width: none; transform: translateX(-16.73%); }
+    .vector-page .vector-grid--family .family-crop--limchoc img { height: 150.11% !important; transform: translateY(-36.01%); }
+    .vector-page .vector-grid--pets { grid-template-columns: repeat(3, minmax(0, 349.388px)); row-gap: 36px; column-gap: 26.074px; }
+    .vector-page .vector-grid--pets .work-item { aspect-ratio: 1 !important; border-radius: 9.204px; box-shadow: 0 4.604px 4.604px rgba(0, 0, 0, .25); }
+    .vector-page .vector-grid--pets .work-item img { width: 100%; height: 100% !important; object-fit: cover; }
+    .vector-page .vector-grid--pets .pets-silhouette { display: flex; align-items: flex-start; justify-content: center; background: #926d64; }
+    .vector-page .vector-grid--pets .pets-silhouette img { width: 258.999px; height: 335.482px !important; object-fit: contain; }
+    .vector-page .vector-grid--pets .pets-teves img { width: 104.24%; max-width: none; transform: translateX(-4.24%); }
+    .vector-page .vector-grid--pets .pets-composite { position: relative; overflow: hidden; background: #edc482; }
+    .vector-page .vector-grid--pets .pets-composite::before { position: absolute; inset: 0; background: #edc482; content: ''; }
+    .vector-page .vector-grid--pets .pets-composite img { position: absolute; top: -11.05%; left: 60.84px; width: 288.62px; height: 111.05% !important; object-fit: fill; }
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      .vector-page .vector-grid .work-item:hover,
+      .vector-page .vector-grid .work-item:focus-within { z-index: 5; transform: translateY(-10px) scale(1.05); box-shadow: 0 22px 42px rgba(0, 0, 0, .2); }
+    }
+    .vector-page .vector-grid .work-item--pad { min-height: 220px; }
+    .vector-page .vector-grid .work-item--pad img { width: auto; max-width: 80%; height: auto !important; max-height: 80%; object-fit: contain; }
+    @media (max-width: 760px) {
+      .vector-page .work-header { width: min(100% - 40px, 600px); padding-top: 118px; }
+      .vector-page .vector-intro { width: min(100% - 40px, 600px); padding: 16px 0 24px; }
+      .vector-page .vector-intro p { font-size: 16px; }
+      .vector-page .vector-gallery { width: min(100% - 40px, 600px); }
+      .vector-page .vector-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+      .vector-page .vector-grid--family,
+      .vector-page .vector-grid--pets { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+      .vector-page .vector-grid--pets .pets-silhouette img { width: 74%; height: auto !important; }
+      .vector-page .vector-grid--pets .pets-composite img { top: 1%; left: 21%; width: 58%; height: 98% !important; }
+    }
+    @media (max-width: 460px) { .vector-page .vector-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
-<body>
-
+<body class="vector-page">
   <a class="back-link" href="../index.html#projects" aria-label="Back to portfolio" title="Back to portfolio"><img src="../assets/images/cf-arrow.svg" alt="" width="32" height="32" /></a>
-
   <nav class="nav" id="nav">
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <div class="nav__right">
-      <ul class="nav__links">
-        <li><a href="../index.html#home" class="is-active">HOME</a></li>
-        <li><a href="../index.html#about">ABOUT</a></li>
-        <li><a href="../index.html#projects">PROJECTS</a></li>
-      </ul>
+      <ul class="nav__links"><li><a href="../index.html#home" class="is-active">HOME</a></li><li><a href="../index.html#about">ABOUT</a></li><li><a href="../index.html#projects">PROJECTS</a></li></ul>
       <a href="../index.html#contact" class="nav__cta">CONTACT</a>
     </div>
   </nav>
 
-  <header class="work-header">
-    <p class="work-header__eyebrow">MY WORK</p>
-    <h1>Vector Art</h1>
-  </header>
+  <header class="work-header"><h1>Vector Art</h1></header>
 
   <main>
-    <div class="section-intro">
-      <p class="section-intro__desc">Custom portrait, family, and pet illustrations, plus playful gift tag designs. Scroll through, or click straight into one.</p>
+    <div class="vector-intro">
+      <p>Personal photos turned into clean, expressive vector art, organized by subject: portraits, families, and pets.</p>
+      <p class="vector-intro__link">View more: <a href="https://tinyurl.com/cyjavector" target="_blank" rel="noopener noreferrer">https://tinyurl.com/cyjavector</a></p>
     </div>
+    <div class="vector-gallery">
+      <section class="vector-category" aria-labelledby="individual-heading">
+        <div class="vector-category__heading"><h2 id="individual-heading">Individual</h2></div>
+        <div class="vector-grid">
+          <div class="work-item"><img src="../assets/images/work/vectors/individual-photographer-jamie.jpg" alt="Illustrated portrait of a man in a blue jacket holding a camera" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/individual-photographer-marion.jpg" alt="Illustrated portrait of a man in a dark jacket holding a camera" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/individual-photographer-joham.jpg" alt="Illustrated portrait of a man in a white shirt holding a camera" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/individual-seated-portrait-tshi.jpg" alt="Illustrated portrait of a person seated on the floor in a striped shirt" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/individual-pool-float-audrey.jpg" alt="Colorful illustration of a person on a pool inflatable float" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/individual-standing-portrait-sharlenne.jpg" alt="Illustrated portrait of a woman standing in a dress" /></div>
+        </div>
+      </section>
 
-    <div class="stack">
-      <a class="stack-card" href="vectors/individual.html" style="background-image:url('../assets/images/work/vectors/individual-standing-portrait-sharlenne.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">VECTOR ART</span>
-          <h3>Individual</h3>
-          <p>Custom portrait illustrations of individuals, from seated portraits to playful pool-float scenes.</p>
-        </span>
-      </a>
-      <a class="stack-card" href="vectors/family.html" style="background-image:url('../assets/images/work/vectors/family-portrait-bianca.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">VECTOR ART</span>
-          <h3>Family</h3>
-          <p>Illustrated family portraits in coordinated outfits, capturing groups big and small.</p>
-        </span>
-      </a>
-      <a class="stack-card" href="vectors/pets.html" style="background-image:url('../assets/images/work/vectors/pets-family-portrait-eurika-sebastian.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">VECTOR ART</span>
-          <h3>Pets</h3>
-          <p>Pets woven into the illustrations, from a simple line-art icon to full family portraits.</p>
-        </span>
-      </a>
-      <a class="stack-card" href="vectors/gift-tags.html" style="background-image:url('../assets/images/work/vectors/gift-tag-alex-sushmita-noah.jpg')">
-        <span class="stack-card__scrim"></span>
-        <span class="stack-card__content">
-          <span class="pill">VECTOR ART</span>
-          <h3>Gift Tags</h3>
-          <p>Personalized holiday gift tag designs made for friends and family.</p>
-        </span>
-      </a>
-    </div>
+      <section class="vector-category" aria-labelledby="family-heading">
+        <div class="vector-category__heading"><h2 id="family-heading">Family</h2></div>
+        <div class="vector-grid vector-grid--family">
+          <div class="work-item"><img src="../assets/images/work/vectors/family-portrait-anj-figma.jpeg?v=20260928familyfigma" alt="Illustrated family portrait with a seated parent and children" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/family-portrait-bianca-figma.jpeg?v=20260928familyfigma" alt="Illustrated family portrait of parents with a child" /></div>
+          <div class="work-item family-crop--nathalie"><img src="../assets/images/work/vectors/family-portrait-nathalie-figma.jpeg?v=20260928familyfigma" alt="Illustrated family portrait with parents and children" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/family-portrait-mannie-lou-figma.png?v=20260928familyfigma" alt="Illustrated family portrait in formal wedding attire" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/family-portrait-tenorios-figma.jpeg?v=20260928familyfigma" alt="Illustrated family portrait in coordinated outfits" /></div>
+          <div class="work-item family-crop--limchoc"><img src="../assets/images/work/vectors/family-portrait-limchoc-figma.jpeg?v=20260928familyfigma" alt="Illustrated family portrait in winter clothing" /></div>
+        </div>
+      </section>
 
-    <div class="work-footer glass-card">
-      <a href="#">
-        <img src="../assets/images/work/vectors/footer-qr-code.png" alt="QR code" />
-      </a>
-      <a href="#">
-        <h3>SCAN TO VIEW MORE</h3>
-        <p>VECTOR ART</p>
-      </a>
+      <section class="vector-category" aria-labelledby="pets-heading">
+        <div class="vector-category__heading"><h2 id="pets-heading">Pets</h2></div>
+        <div class="vector-grid vector-grid--pets">
+          <div class="work-item"><img src="../assets/images/work/vectors/pets-dog-line-icon-figma.png?v=20260928petsfigma" alt="Illustrated dog portrait with paw prints" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/pets-portrait-mark-figma.jpeg?v=20260928petsfigma" alt="Illustrated portrait of a person holding a small dog" /></div>
+          <div class="work-item pets-silhouette"><img src="../assets/images/work/vectors/pets-dog-silhouette-figma.png?v=20260928petsfigma" alt="Dog silhouette illustration on a brown background" /></div>
+          <div class="work-item pets-teves"><img src="../assets/images/work/vectors/pets-family-portrait-teves-figma.jpeg?v=20260928petsfigma" alt="Illustrated family portrait with several pets" /></div>
+          <div class="work-item"><img src="../assets/images/work/vectors/pets-family-portrait-khristine-figma.jpeg?v=20260928petsfigma" alt="Illustrated family portrait with a dog" /></div>
+          <div class="work-item pets-composite"><img src="../assets/images/work/vectors/pets-family-portrait-eurika-figma.jpeg?v=20260928petsfigma" alt="Illustrated couple with a dog on a yellow background" /></div>
+        </div>
+      </section>
     </div>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <script src="../assets/js/main.js?v=20260924a"></script>
-<script defer src="/_vercel/insights/script.js"></script><script defer src="/_vercel/insights/script.js"></script></body>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
 </html>

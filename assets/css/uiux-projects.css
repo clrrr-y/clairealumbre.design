@@ -287,9 +287,10 @@
   .uiux-plaza-usercentric__copy p { font-size: 16px; }
   .uiux-plaza-feature--collections .uiux-plaza-feature__copy,.uiux-plaza-feature--services .uiux-plaza-feature__copy,.uiux-plaza-feature--collections .uiux-plaza-feature__screens,.uiux-plaza-feature--services .uiux-plaza-feature__screens { grid-column: auto; grid-row: auto; }
   .uiux-case--plaza .uiux-plaza-features { margin-bottom: 76px; }
-  .uiux-plaza-feature__screens { grid-template-columns: 1fr; gap: 16px; }
+  /* Keep paired phone screens together inside one horizontal feature card. */
+  .uiux-plaza-feature__screens { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; padding: 8px; }
+  .uiux-plaza-feature__screens img { min-width: 0; width: 100%; height: auto; }
   .uiux-plaza-feature figure { padding: 16px; }
-  .uiux-plaza-feature__screens { padding: 12px; }
   .uiux-case--plaza .uiux-accessibility { grid-template-columns: 1fr; gap: 28px; padding: 56px 20px; }
   .uiux-case--plaza .uiux-accessibility-grid { grid-template-columns: 1fr; }
   .uiux-case--plaza .uiux-outcome { margin-top: 72px; padding: 0; }
@@ -388,9 +389,9 @@
 
 @media (max-width: 767px) {
   .uiux-case--loyalty .uiux-case-hero { padding: 42px 16px 32px; margin-bottom: 70px; }
-  .uiux-case--loyalty .uiux-loyalty-screen-row { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-  .uiux-loyalty-screen-row .uiux-loyalty-phone { max-width: 220px; border-width: 4px; border-radius: 26px; }
-  .uiux-loyalty-screen-row .uiux-loyalty-phone:last-child { grid-column: 1 / -1; width: calc(50% - 5px); justify-self: center; }
+  .uiux-case--loyalty .uiux-loyalty-screen-row { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 5px; }
+  .uiux-loyalty-screen-row .uiux-loyalty-phone { width: 100%; max-width: none; min-width: 0; border-width: 3px; border-radius: 18px; }
+  .uiux-loyalty-screen-row .uiux-loyalty-phone:last-child { grid-column: auto; width: 100%; justify-self: center; }
   .uiux-loyalty-phone img { border-radius: 20px; }
   .uiux-loyalty-usercentric-visual .uiux-loyalty-phone { max-width: 250px; }
   .uiux-case--loyalty .uiux-loyalty-features { margin-bottom: 76px; }
@@ -398,8 +399,10 @@
   .uiux-loyalty-feature,.uiux-loyalty-feature:nth-of-type(even) { grid-template-columns: 1fr; gap: 22px; margin-bottom: 64px; }
   .uiux-loyalty-feature:last-child { margin-bottom: 0; }
   .uiux-loyalty-feature:nth-of-type(even) .uiux-loyalty-feature__copy,.uiux-loyalty-feature:nth-of-type(even) .uiux-loyalty-feature__screens { grid-column: auto; grid-row: auto; }
-  .uiux-loyalty-feature__screens { gap: 8px; padding: 12px; border-radius: 20px; }
-  .uiux-loyalty-feature__screens .uiux-loyalty-phone { max-width: 220px; border-width: 4px; border-radius: 24px; }
+  /* Keep two-phone feature cards in their original horizontal card. */
+  .uiux-loyalty-feature__screens { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; padding: 12px; border-radius: 20px; }
+  .uiux-loyalty-feature__screens .uiux-loyalty-phone { width: 100%; max-width: 220px; min-width: 0; border-width: 4px; border-radius: 24px; }
+  .uiux-loyalty-feature__screens--single { grid-template-columns: 1fr; }
 }
 
 /* Negros Tourism Pass: Figma-exported phone-screen groups and project narrative. */
@@ -439,14 +442,16 @@
 
 @media (max-width: 767px) {
   .uiux-case--tourism .uiux-case-hero { padding: 30px 14px; margin-bottom: 70px; }
-  .uiux-case--tourism .uiux-tourism-screen-row { width: 100%; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .uiux-case--tourism .uiux-tourism-screen-row { width: 100%; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 5px; }
   .uiux-case--tourism .uiux-tourism-features { margin-bottom: 76px; }
   .uiux-case--tourism .uiux-tourism-features > .uiux-section-heading { margin-bottom: 32px; }
   .uiux-tourism-feature,.uiux-tourism-feature:nth-of-type(even) { grid-template-columns: 1fr; gap: 22px; margin-bottom: 64px; }
   .uiux-tourism-feature:nth-of-type(even) .uiux-tourism-feature__copy,
   .uiux-tourism-feature:nth-of-type(even) .uiux-tourism-feature__screens { grid-column: auto; grid-row: auto; }
-  .uiux-tourism-feature__screens { gap: 4px; padding: 10px; border-radius: 20px; }
+  /* Fit three tourism phones in one horizontal feature card on mobile. */
+  .uiux-tourism-feature__screens { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 5px; padding: 8px; border-radius: 20px; }
   .uiux-tourism-feature__screens--phones { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+  .uiux-tourism-feature__screens--single { grid-template-columns: 1fr; }
   .uiux-tourism-screen-crop { border-radius: 10px; }
 }
 
@@ -508,7 +513,8 @@
   .uiux-case--planout .uiux-story-section--usercentric-placeholder .uiux-story-visual { padding: 0; border-radius: 18px; }
   .uiux-case--planout .uiux-story-section--usercentric-placeholder .uiux-story-visual img { border-radius: 18px; }
   .uiux-planout-feature { margin-bottom: 62px; }
-  .uiux-planout-feature__screens { gap: 12px; margin-top: 22px; padding: 0; }
+  /* Stack paired PlanOut screenshots vertically on mobile, matching Create an Event. */
+  .uiux-planout-feature__screens { grid-template-columns: 1fr; gap: 12px; margin-top: 22px; padding: 0; }
   .uiux-planout-feature__screens figure { border-radius: 12px; clip-path: inset(0 round 12px); }
   .uiux-planout-feature__screens img { border-radius: 12px; }
   .uiux-planout-feature__screens--review img { clip-path: inset(0 0.8% 0 0 round 12px); }

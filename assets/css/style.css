@@ -3352,16 +3352,16 @@ ul {
   }
 
   .hero__tags {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 6px 18px;
-    font-size: 13px;
+    gap: 10px;
+    font-size: clamp(9px, 2.8vw, 13px);
   }
 
   .hero__tag-group,
   .hero__tag-group:first-child,
   .hero__tag-group:last-child {
-    gap: 18px;
+    gap: 10px;
   }
 
   .hero__tag-group span,
@@ -3942,6 +3942,18 @@ body.about-page #tech-stack .about-page__tool-face--back {
 }
 
 @media (max-width: 767px) {
+  body.about-page .about-page__section-heading {
+    display: flex;
+    justify-content: center;
+  }
+
+  body.about-page .about-page__section > .about-page__tag,
+  body.about-page .about-page__detail-section > .about-page__tag {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
+  }
+
   body.about-page .about-page__details-frame,
   body.about-page #tech-stack.about-page__tech-stack-frame {
     padding: 18px;
@@ -4102,7 +4114,8 @@ body.about-page #tech-stack.about-page__tech-stack-frame {
   }
 
   .about-orbit__images img:nth-child(1),
-  .about-orbit__images img:nth-child(2) {
+  .about-orbit__images img:nth-child(2),
+  .about-orbit__images img:nth-child(3) {
     top: -52px;
   }
 
@@ -4119,39 +4132,35 @@ body.about-page #tech-stack.about-page__tech-stack-frame {
     animation-delay: -8s;
   }
 
-  .about-orbit__images img:nth-child(3),
-  .about-orbit__images img:nth-child(4) {
-    top: calc(100% - 112px);
-  }
-
   .about-orbit__images img:nth-child(3) {
-    left: 1%;
-    transform: translate(0, -50%) rotate(-4deg);
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(4deg);
     animation-delay: -5s;
   }
 
+  .about-orbit__images img:nth-child(4),
+  .about-orbit__images img:nth-child(5),
+  .about-orbit__images img:nth-child(6) {
+    top: auto;
+    bottom: 16px;
+  }
+
   .about-orbit__images img:nth-child(4) {
-    left: auto;
-    right: 1%;
-    transform: translate(0, -50%) rotate(8deg);
+    left: 1%;
+    transform: translate(0, 50%) rotate(-4deg);
     animation-delay: -11s;
   }
 
-  .about-orbit__images img:nth-child(5),
-  .about-orbit__images img:nth-child(6) {
-    top: calc(100% - 4px);
-  }
-
   .about-orbit__images img:nth-child(5) {
-    left: 1%;
-    transform: translate(0, -50%) rotate(14deg);
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(14deg);
     animation-delay: -14s;
   }
 
   .about-orbit__images img:nth-child(6) {
     left: auto;
     right: 1%;
-    transform: translate(0, -50%) rotate(12deg);
+    transform: translate(0, 50%) rotate(12deg);
     animation-delay: -17s;
   }
 
@@ -4887,9 +4896,9 @@ body.about-page #tech-stack .about-page__tools-shell {
 .contact__method svg,.contact__socials svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .contact__method:hover { color: #fff; }
 .contact__socials { display: flex; align-items: center; gap: 12px; }
-.contact__socials button { display: grid; width: 38px; height: 38px; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(255,255,255,.06); color: rgba(244,244,244,.72); }
-.contact__socials button:disabled { cursor: not-allowed; opacity: .62; }
-.contact__socials button svg { width: 18px; height: 18px; }
+.contact__socials a { display: grid; width: 38px; height: 38px; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: rgba(255,255,255,.06); color: rgba(244,244,244,.72); text-decoration: none; }
+.contact__socials a:hover { background: rgba(255,255,255,.14); }
+.contact__socials a svg { width: 18px; height: 18px; }
 
 @media (max-width: 780px) {
   .contact-cta { padding: 56px 32px 56px; }
@@ -5013,13 +5022,12 @@ body.about-page #tech-stack .about-page__tools-shell {
   justify-content: center;
   gap: 12px;
 }
-.contact__socials button {
+.contact__socials a {
   width: 40px;
   height: 40px;
   color: rgba(244, 244, 244, .96);
   opacity: 1;
 }
-.contact__socials button:disabled { opacity: 1; }
 .contact__bottom {
   padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, .24);
