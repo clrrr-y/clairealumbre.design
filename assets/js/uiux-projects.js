@@ -23,7 +23,7 @@
       usercentric: 'For customers, I placed the points balance and QR code front and center on the Home screen, so they’re ready to use the moment the app opens. Signing in uses only a mobile number and a one-time password, with no passwords to remember. For merchants, I focused on speed and accuracy, showing a clear breakdown of amounts and points before any transaction is confirmed.',
       accessibility: 'Key actions use large, high-contrast buttons, and points are color-coded so earned and redeemed activity is easy to tell apart. OTP login removes the hassle of passwords for customers, while review screens and clear success and error messages help merchants avoid mistakes. Friendly empty states guide users when there’s no activity yet, and a consistent layout across both apps makes them quick to learn.',
       outcome: 'The result is a connected loyalty experience where customers can earn and use points at any partner store with a single QR code, and merchants can process rewards in just a few taps. I also created user and merchant manuals to support onboarding, helping both groups get started quickly. This project strengthened my ability to design for two user groups while keeping the experience unified.',
-      usercentricVisual: 'loyalty/lmf-home.png',
+      usercentricVisual: 'loyalty/lmf-home.webp',
       usercentricAlt: 'Rewards by LMFC customer Home screen with points balance, personal QR code, recent transactions, and partner rewards',
     },
     cabana: { title: 'Cabana', type: 'MOBILE APP DESIGN', overview: 'A mobile guest experience for planning stays, discovering amenities, and accessing services.' },
@@ -53,7 +53,7 @@
       accessibility: 'Every list includes search and filters, so organizers can quickly find a specific order, ticket code, reservation, or participant. Clear status labels, tooltips, and inline validation reduce errors, while splitting long processes into shorter steps lowers the chance of missing important details. The layout stays consistent across all modules, making it easier to learn and navigate.',
       outcomeHeading: 'CONCLUSION',
       outcome: 'The PlanOut Back Office brings a complex set of tools together in a guided, organized workspace. Clear steps, AI-assisted event creation, and reusable templates help organizers set up and manage events with more confidence. This project strengthened my skills in designing data-heavy interfaces that stay simple and easy to use.',
-      usercentricVisual: 'planout-back-office/user-centric-event-creation.png',
+      usercentricVisual: 'planout-back-office/user-centric-event-creation.webp',
       usercentricAlt: 'PlanOut event creation choice modal offering a manual setup path and AI-generated event draft',
     },
     'aspire-mfi': {
